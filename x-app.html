@@ -1,21 +1,20 @@
-   
-   <link rel="import" href="bower_components/polymer/polymer.html">
-   <link rel="import" href="bower_components/app-layout/app-layout.html">
-		<link rel="import" href="bower_components/app-layout/app-drawer/app-drawer.html">
-		<link rel="import" href="bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
-		<link rel="import" href="bower_components/app-layout/app-header-layout/app-header-layout.html">
-		<link rel="import" href="bower_components/app-layout/app-header/app-header.html">
-		<link rel="import" href="bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/app-layout/app-layout.html">
+<link rel="import" href="bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="bower_components/app-layout/app-toolbar/app-toolbar.html">
 <link rel="import" href="bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 
-   <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
-   <link rel="import" href="bower_components/iron-media-query/iron-media-query.html">
-   <link rel="import" href="bower_components/iron-resizable-behavior/iron-resizable-behavior.html">
-   <link rel="import" href="bower_components/iron-scroll-target-behavior/iron-scroll-target-behavior.html">
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="bower_components/iron-media-query/iron-media-query.html">
+<link rel="import" href="bower_components/iron-resizable-behavior/iron-resizable-behavior.html">
+<link rel="import" href="bower_components/iron-scroll-target-behavior/iron-scroll-target-behavior.html">
 
-  <link rel="import" href="bower_components/paper-styles/paper-styles.html">
-  <link rel="import" href="bower_components/paper-card/paper-card.html">
- <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="bower_components/paper-card/paper-card.html">
+<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
 
 <link rel="import" href="bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="bower_components/iron-icons/iron-icons.html">
@@ -78,12 +77,12 @@
           <app-header-layout>
             <app-header slot="header" fixed condenses>
               <app-toolbar>
-              <paper-icon-button icon="menu" onclick="drawer1.toggle"></paper-icon-button>
+              <paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>
                 <div main-title>App name</div>
               </app-toolbar>
             </app-header>
             <app-drawer-layout>
-              <app-drawer id="drawer1" swipe-open slot="drawer">
+              <app-drawer id="drawer" swipe-open slot="drawer">
                 drawer-content
               </app-drawer>
 
