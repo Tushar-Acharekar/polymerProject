@@ -1,0 +1,21 @@
+{
+  "name": "workspace",
+  "homepage": "https://github.com/Tushar-Acharekar/polymerProject",
+  "authors": [
+    "acharekart <acharekart@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "app-layout": "PolymerElements/app-layout#^2.0.1"
+  }
+}
