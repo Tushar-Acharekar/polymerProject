@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "app-layout": "PolymerElements/app-layout#^2.0.1"
+    "app-layout": "PolymerElements/app-layout#^2.0.1",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.4"
   }
 }
