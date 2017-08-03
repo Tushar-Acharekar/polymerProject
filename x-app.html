@@ -15,6 +15,7 @@
 <link rel="import" href="bower_components/paper-styles/paper-styles.html">
 <link rel="import" href="bower_components/paper-card/paper-card.html">
 <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="bower_components/paper-button/paper-button.html">
 
 <link rel="import" href="bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="bower_components/iron-icons/iron-icons.html">
@@ -76,14 +77,13 @@
 
     
   <app-drawer-layout>
-    <app-drawer slot="drawer">
-      <app-toolbar>Getting Started</app-toolbar>
-    </app-drawer>
+    <app-drawer slot="drawer"></app-drawer>
 
     <app-header-layout>
       <app-header slot="header" reveals effects="waterfall">
         <app-toolbar>
           <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+          <div>My App</div>
         </app-toolbar>
       </app-header>
 
