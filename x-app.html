@@ -15,6 +15,7 @@
 <link rel="import" href="bower_components/paper-styles/paper-styles.html">
 <link rel="import" href="bower_components/paper-card/paper-card.html">
 <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="bower_components/paper-button/paper-button.html">
 
 <link rel="import" href="bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="bower_components/iron-icons/iron-icons.html">
@@ -26,8 +27,7 @@
 
 
 <dom-module id="x-app">
-
-  <template>
+<template>
 
     <style>
     html, body {
@@ -76,36 +76,30 @@
 
 
     
-        <app-drawer-layout>
+  <app-drawer-layout>
+    <app-drawer slot="drawer"></app-drawer>
 
-      <app-drawer slot="drawer">
-        <app-toolbar>Getting Started</app-toolbar>
-      </app-drawer>
+    <app-header-layout>
+      <app-header slot="header" reveals effects="waterfall">
+        <app-toolbar>
+          <paper-icon-button icon="menu" drawer-toggle>My_Site</paper-icon-button>
+        </app-toolbar>
+      </app-header>
 
-      <app-header-layout>
-
-        <app-header slot="header" reveals effects="waterfall">
-          <app-toolbar>
-            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
-            <div main-title>Title</div>
-          </app-toolbar>
-        </app-header>
-
-       <paper-card heading="Emmental" alt="Emmental">
+      <paper-card heading="Emmental" alt="Emmental">
           <div class="card-content">
-          Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland. It is one of the cheeses of Switzerland, and is sometimes known as Swiss cheese.
+            Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland. It is one of the cheeses of Switzerland, and is sometimes known as Swiss cheese.
           </div>
           <div class="card-actions">
-          <paper-button>Share</paper-button>
-          <paper-button>Explore!</paper-button>
+            <paper-button>Share</paper-button>
+            <paper-button>Explore!</paper-button>
           </div>
       </paper-card>
-
-      </app-header-layout>
-
-    </app-drawer-layout>
-
-  </template>
+    </app-header-layout>
+  </app-drawer-layout>
+  
+  
+</template>
 
   <script>
     Polymer({
