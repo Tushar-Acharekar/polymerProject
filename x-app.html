@@ -72,28 +72,37 @@
       app-drawer-layout:not([narrow]) [drawer-toggle] {
         display: none;
       }
+			
+			paper-card{
+				
+				margin:15px;
+			}
+			
+			
     </style>
 
-<app-header-layout >    
-  <app-header slot="header" reveals effects="waterfall">
-    <app-toolbar>
-      <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
-      <div>My App</div>
-    </app-toolbar>
-  </app-header>
-  
-  <app-drawer-layout>
-    <app-drawer slot="drawer" opened></app-drawer>
-       <paper-card heading="Emmental" alt="Emmental">
-          <div class="card-content">
-            Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland. It is one of the cheeses of Switzerland, and is sometimes known as Swiss cheese.
-          </div>
-          <div class="card-actions">
-            <paper-button>Share1</paper-button>
-            <paper-button>Explore1!</paper-button>
-          </div>
-      </paper-card>
-  </app-drawer-layout>
+<app-header-layout>
+	<app-header slot="header" fixed condenses>
+		<app-toolbar>
+		<paper-icon-button id="toggle" icon="menu" drawer-toggle></paper-icon-button>
+		  <div main-title>App name</div>
+		</app-toolbar>
+	</app-header>
+	<app-drawer-layout id="drawerLayout">
+		<app-drawer id="drawer" opened slot="drawer">
+			drawer-content
+		</app-drawer>
+
+		<paper-card heading="Emmental" alt="Emmental">
+		  <div class="card-content">
+			Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland. It is one of the cheeses of Switzerland, and is sometimes known as Swiss cheese.
+		  </div>
+		  <div class="card-actions">
+			<paper-button>Share1</paper-button>
+			<paper-button>Explore1!</paper-button>
+		  </div>
+		</paper-card>
+	</app-drawer-layout>
 </app-header-layout>  
   
   
@@ -104,7 +113,8 @@
       is: 'x-app'
     });
     
-        var drawerLayout = document.getElementById('drawerLayout');
+    var drawerLayout = document.getElementById('drawerLayout');
+    var toggle = document.getElementById('toggle');
     toggle.addEventListener('click', function() {
       if (drawerLayout.forceNarrow || !drawerLayout.narrow) {
         drawerLayout.forceNarrow = !drawerLayout.forceNarrow;
