@@ -1,0 +1,15 @@
+	$scope.check = function (){
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+		  console.log(user.email);
+		  //angular.element(document.getElementById('quickstart-sign-in')).scope().redirectHome();
+		  $scope.redirectHome();
+        }else{
+			console.log("No user logged...!");
+			// angular.element(document.getElementById('quickstart-sign-out')).scope().redirectDefault(); 
+		}
+      });
+    }
+	
+	
+	
