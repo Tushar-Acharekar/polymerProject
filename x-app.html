@@ -27,7 +27,7 @@
 
 
 <dom-module id="x-app">
-  <template>
+	<template>
 
     <style>
     html, body {
@@ -72,13 +72,7 @@
       app-drawer-layout:not([narrow]) [drawer-toggle] {
         display: none;
       }
-			
-			paper-card{
-				
-				margin:15px;
-			}
-			
-			
+
     </style>
 
 <app-header-layout>
@@ -108,20 +102,20 @@
   
 </template>
 
-  <script>
-    Polymer({
-      is: 'x-app'
-    });
-    
-    var drawerLayout = document.getElementById('drawerLayout');
-    var toggle = document.getElementById('toggle');
-    toggle.addEventListener('click', function() {
-      if (drawerLayout.forceNarrow || !drawerLayout.narrow) {
-        drawerLayout.forceNarrow = !drawerLayout.forceNarrow;
-      } else {
-        drawerLayout.drawer.toggle();
-      }
-    });
-  </script>
+	<script>
+		Polymer({
+			is: 'x-app'
+		});
+
+		var drawerLayout = document.getElementById('drawerLayout');
+
+		toggle.addEventListener('click', function() {
+			if (drawerLayout.forceNarrow || !drawerLayout.narrow) {
+				drawerLayout.forceNarrow = !drawerLayout.forceNarrow;
+			} else {
+				drawerLayout.drawer.toggle();
+			}
+		});
+	</script>
 
 </dom-module>
