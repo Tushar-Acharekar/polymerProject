@@ -72,7 +72,7 @@
       app-drawer-layout:not([narrow]) [drawer-toggle] {
         display: none;
       }
-
+	
     </style>
 
 <app-header-layout>
@@ -108,7 +108,7 @@
 		});
 
 		var drawerLayout = document.getElementById('drawerLayout');
-
+    var toggle = document.getElementById('toggle');
 		toggle.addEventListener('click', function() {
 			if (drawerLayout.forceNarrow || !drawerLayout.narrow) {
 				drawerLayout.forceNarrow = !drawerLayout.forceNarrow;
