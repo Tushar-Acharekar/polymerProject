@@ -105,19 +105,17 @@
 	<script>
 		Polymer({
 			is: 'x-app'
-
+		});
 
 		var drawerLayout = document.getElementById('drawerLayout');
-    var toggle = document.getElementById('toggle');
-		toggle.addEventListener('click', function() {
+    var toggle1 = document.getElementById('toggle');
+		toggle1.addEventListener('click', function() {
 			if (drawerLayout.forceNarrow || !drawerLayout.narrow) {
 				drawerLayout.forceNarrow = !drawerLayout.forceNarrow;
 			} else {
 				drawerLayout.drawer.toggle();
 			}
 		});
-		
-	});
 	</script>
 
 </dom-module>
