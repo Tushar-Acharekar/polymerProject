@@ -1,8 +1,25 @@
-<paper-card heading="Pre-fab homes" image="donuts.png" alt="House" class="white" style="margin-bottom:8px;">
-  <div class="card-actions">
-    <paper-icon-button icon="favorite"></paper-icon-button>
-    <paper-icon-button icon="bookmark"></paper-icon-button>
-    <paper-icon-button icon="social:share"></paper-icon-button>
-    <paper-button id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()">Sign Out</paper-button>
-  </div>
-</paper-card>
+<app-header-layout>
+	<app-header slot="header" fixed condenses>
+		<app-toolbar>
+		<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>
+		  <div main-title>App name</div>
+		</app-toolbar>
+	</app-header>
+	<app-drawer-layout>
+		<app-drawer id="drawer" swipe-open slot="drawer">
+			drawer-content
+		</app-drawer>
+
+    <paper-card heading="Pre-fab homes" image="donuts.png" alt="House" class="white" style="margin-bottom:8px;">
+      <div class="card-actions">
+        <paper-icon-button icon="favorite"></paper-icon-button>
+        <paper-icon-button icon="bookmark"></paper-icon-button>
+        <paper-icon-button icon="social:share"></paper-icon-button>
+        <paper-button id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()">Sign Out</paper-button>
+      </div>
+    </paper-card>
+	</app-drawer-layout>
+</app-header-layout>
+
+
+
