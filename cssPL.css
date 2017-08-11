@@ -14,3 +14,14 @@
     height: 100vh;
     justify-content: center;
 }
+
+
+
+        app-header {
+        color: #fff;
+        background-color: var(--app-primary-color);
+      }
+
+      app-header paper-icon-button {
+        --paper-icon-button-ink-color: white;
+}
