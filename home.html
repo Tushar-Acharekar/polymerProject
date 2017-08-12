@@ -16,6 +16,7 @@
   <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
   <link rel="import" href="bower_components/paper-button/paper-button.html">
   <link rel="import" href="bower_components/paper-input/paper-input.html">
+  <link rel="import" href="paper-item/paper-icon-item.html">
 
   <link rel="import" href="bower_components/iron-icon/iron-icon.html">
   <link rel="import" href="bower_components/iron-icons/iron-icons.html">
@@ -25,31 +26,39 @@
     body {
       margin: 0;
       font-family: 'Roboto', 'Noto', sans-serif;
-      background-color: #eee;
+      background-color: #FF9E80;
     }
     app-header {
-      background-color: #4285f4;
+      background-color: #E57373;
       color: #fff;
-			--app-header-shadow: {
-				box-shadow: inset 0px 5px 2px -3px rgba(0, 0, 0, 0.2);
-			};
+	  --app-header-shadow: {
+		box-shadow: inset 0px 5px 2px -3px rgba(0, 0, 0, 0.2);
+		opacity:1;
+	  };
     }
+	
     app-header paper-icon-button {
       --paper-icon-button-ink-color: #fff;
     }
     app-drawer-layout {
       --app-drawer-layout-content-transition: margin 0.2s;
+	    margin: 10px;
     }
     app-drawer {
       --app-drawer-content-container: {
-        background-color: #eee;
+        background-color: #9575CD;
       }
     }
     .drawer-content {
-      margin-top: 80px;
+      margin-top: 64px;
       height: calc(100% - 80px);
       overflow: auto;
+	  background-color: #9575CD;
     }
+	
+	paper-card{
+		width:100%;
+	}
     </style>
 
 
@@ -64,7 +73,27 @@
     <app-drawer-layout id="drawerLayout">
 		<app-drawer slot="drawer">
 			<div class="drawer-content">
-				<app-toolbar>Menu</app-toolbar>
+				  <paper-icon-item>
+					<iron-icon icon="inbox" slot="item-icon" item-icon></iron-icon> Inbox
+				  </paper-icon-item>
+				  <paper-icon-item>
+					<iron-icon icon="query-builder" slot="item-icon" item-icon></iron-icon> Snoozed
+				  </paper-icon-item>
+				  <paper-icon-item>
+					<iron-icon icon="done" slot="item-icon" item-icon></iron-icon> Done
+				  </paper-icon-item>
+				  <paper-icon-item>
+					<iron-icon icon="drafts" slot="item-icon" item-icon></iron-icon> Drafts
+				  </paper-icon-item>
+				  <paper-icon-item>
+					<iron-icon icon="send" slot="item-icon" item-icon></iron-icon> Sent
+				  </paper-icon-item>
+				  <paper-icon-item>
+					<iron-icon icon="delete" slot="item-icon" item-icon></iron-icon> Trash
+				  </paper-icon-item>
+				  <paper-icon-item>
+					<iron-icon icon="report" slot="item-icon" item-icon></iron-icon> Spam
+				  </paper-icon-item>
 			</div>
 		</app-drawer>
 		  
