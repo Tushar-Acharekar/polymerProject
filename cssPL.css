@@ -16,12 +16,3 @@
 }
 
 
-
-        app-header {
-        color: #fff;
-        background-color: var(--app-primary-color);
-      }
-
-      app-header paper-icon-button {
-        --paper-icon-button-ink-color: red;
-}
