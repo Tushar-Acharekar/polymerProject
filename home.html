@@ -38,11 +38,11 @@
 <app-header-layout>
 	<app-header slot="header" fixed condenses>
 		<app-toolbar>
-		<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>
+		<paper-icon-button icon="menu" id="toggle"  onclick="drawer.toggle()"></paper-icon-button>
 		  <div main-title>App name</div>
 		</app-toolbar>
 	</app-header>
-	<app-drawer-layout>
+	<app-drawer-layout id="drawerLayout">
 		<app-drawer id="drawer" swipe-open slot="drawer">
 			drawer-content
 		</app-drawer>
@@ -60,6 +60,18 @@
     </paper-card>
 	</app-drawer-layout>
 </app-header-layout>
+
+  	<script>
+		var drawerLayout = document.getElementById('drawerLayout');
+        var toggle1 = document.getElementById('toggle');
+		toggle1.addEventListener('click', function() {
+			if (drawerLayout.forceNarrow || !drawerLayout.narrow) {
+				drawerLayout.forceNarrow = !drawerLayout.forceNarrow;
+			} else {
+				drawerLayout.drawer.toggle();
+			}
+		});
+	</script>
 
 
 
