@@ -10,13 +10,13 @@
   
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="bower_components/polymer/polymer.html">
-   
+ 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
   <script src="bower_components/ng-polymer-elements/ng-polymer-elements.min.js"></script>
-  
+  <link href='cssPL.css' rel='stylesheet'>
   <script src="firebasePL.js"></script>
   <script src="angularPL.js"></script>
   <script src="jqueryPL.js"></script>
@@ -26,7 +26,9 @@
 </head>
 
 <body ng-app="MODULE1">
+  <div class="container horizontal layout">
     <div ng-view></div> 
+  </div>
 </body>
 
 </html>
