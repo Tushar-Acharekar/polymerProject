@@ -1,18 +1,10 @@
-/* .container input{width: 200px;}
-.container > *{
-	margin: 0px auto;
-	padding: 5px;
-}
+ .container input{width: 200px;}
 
 .container button{width: 150px;}
 
 .container 
 {
-    display: flex;
-    flex-direction: column;
-	align-items: center;
+
     height: 100vh;
-    justify-content: center;
 }
 
-*/
