@@ -1,7 +1,6 @@
 
 var module1 = angular.module("MODULE1", ["ngRoute", "firebase", "ng-polymer-elements"]);
 
-
 module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $firebaseObject, $firebaseArray) {
 	$scope.email = "acharekart@gmail.com";
 	$scope.password = "Pass@123";
