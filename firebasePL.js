@@ -11,16 +11,14 @@
    function firebaseSignIn(email, password) { 
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
           if (error.code === 'auth/wrong-password') {
-            //alert('Wrong password.');
 						document.querySelector('paper-toast').show("Wrong password.");
           } 
           else if (error.code === 'auth/user-not-found') {
-            //alert('user not found, Please SignUP');	
 						document.querySelector('paper-toast').show("User not found, Please SignUP");
           } 		  
 		  else {
-            alert(error.message);
 						console.log("errorCode :" + error.code);
+						document.querySelector('paper-toast').show(error.message);
           }
         });
       }
@@ -45,14 +43,14 @@
 			console.log("errorMessage signup:" + errorMessage);
 			console.log("errorCode signup:" + errorCode);
 			if (error.code === 'auth/invalid-email') {
-				alert('Please enter valid email.');
+				document.querySelector('paper-toast').show("Please enter valid email.");
 			} 
 			else if (error.code === 'auth/weak-password') {
-				alert('Password should be at least 6 characters');	
+				document.querySelector('paper-toast').show('Password should be at least 6 characters');
 			} 		  
 			else {
-				alert(error.message);
 				console.log("errorCode :" + error.code);
+				document.querySelector('paper-toast').show(error.message);
 			}
 		});
 	}
@@ -63,18 +61,3 @@
 			firebase.auth().signOut();
 		}
 	}
-
-/*      function initApp() {
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-		  console.log(user.email);
-        }else{
-			console.log("No user logged...!");
-		}
-      }); 
-    } 
-	
-	
-    window.onload = function() {
-      initApp();
-    };*/
