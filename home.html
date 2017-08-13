@@ -1,3 +1,4 @@
+<link rel="import" href="javscript_import.html">
 <style is="custom-style">
     body {
       margin: 0;
@@ -83,17 +84,6 @@
     </app-drawer-layout>
   </app-header-layout>
 
-  <script>
-    var drawerLayout = document.getElementById('drawerLayout');
-    toggle.addEventListener('click', function() {
-			console.log("clicked....................!");
-      if (drawerLayout.forceNarrow || !drawerLayout.narrow) {
-        drawerLayout.forceNarrow = !drawerLayout.forceNarrow;
-      } else {
-        drawerLayout.drawer.toggle();
-      }
-    });
-  </script>
 
 
 
