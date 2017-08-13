@@ -1,27 +1,12 @@
-<style is="custom-style">
-	.container1 
-	{
-    display: flex;
-    flex-direction: column;
-	  align-items: center;
-    height: 100vh;
-    justify-content: center;
-	}
-
-	
-</style>
-
-<div class="container1">	
-	<paper-card image="login.png" alt="Pulse" class="flex self-center white">
-		<div class="card-content">
-			<paper-input label="Username" id="email" ng-model="email">
-			</paper-input>
-			<paper-input label="Password" id="password" type="password" ng-model="password">
-			</paper-input>
-		</div>
-		<div class="card-actions">
-			<paper-button id="quickstart-sign-in" name="signin" ng-click="functionSignIn()">Login</paper-button>
-			<paper-button id="quickstart-sign-up" name="signUp" ng-click="functionSignUp()">SignUp</paper-button>
-		</div>
-	</paper-card>
-</div>
+<paper-card image="login.png" alt="Pulse" class="flex self-center white">
+	<div class="card-content">
+		<paper-input label="Username" id="email" ng-model="email">
+		</paper-input>
+		<paper-input label="Password" id="password" type="password" ng-model="password">
+		</paper-input>
+	</div>
+	<div class="card-actions">
+		<paper-button id="quickstart-sign-in" name="signin" ng-click="functionSignIn()">Login</paper-button>
+		<paper-button id="quickstart-sign-up" name="signUp" ng-click="functionSignUp()">SignUp</paper-button>
+	</div>
+</paper-card>
