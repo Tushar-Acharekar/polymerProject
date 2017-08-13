@@ -2,9 +2,16 @@
 .login_card{
 		width:300px;
 	}
+				.container1 {
+				height: 100vh;
+				@apply(--layout-horizontal);
+				@apply(--layout-center-justified);
+			}	
+
 		
 </style>
-<paper-card image="login.png" alt="Pulse" class="flex self-center white login_card">
+	<div class="container1">
+<paper-card image="login.png" alt="Pulse" class="white login_card">
 	<div class="card-content">
 		<paper-input label="Username" id="email" ng-model="email">
 		</paper-input>
@@ -16,3 +23,4 @@
 		<paper-button id="quickstart-sign-up" name="signUp" ng-click="functionSignUp()">SignUp</paper-button>
 	</div>
 </paper-card>
+			</div>
