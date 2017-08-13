@@ -18,7 +18,8 @@
           } 		  
 		  else {
 						console.log("errorCode :" + error.code);
-						document.querySelector('paper-toast').show(error.message);
+				    var temp = error.code;
+						document.querySelector('paper-toast').show(temp);
           }
         });
       }
@@ -50,7 +51,8 @@
 			} 		  
 			else {
 				console.log("errorCode :" + error.code);
-				document.querySelector('paper-toast').show(error.message);
+				var temp = error.code;
+				document.querySelector('paper-toast').show(temp);
 			}
 		});
 	}
