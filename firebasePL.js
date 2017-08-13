@@ -11,14 +11,16 @@
    function firebaseSignIn(email, password) { 
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
           if (error.code === 'auth/wrong-password') {
-            alert('Wrong password.');
+            //alert('Wrong password.');
+						document.querySelector('paper-toast').show("Wrong password.");
           } 
           else if (error.code === 'auth/user-not-found') {
-            alert('user not found, Please SignUP');	
+            //alert('user not found, Please SignUP');	
+						document.querySelector('paper-toast').show("User not found, Please SignUP");
           } 		  
 		  else {
             alert(error.message);
-			console.log("errorCode :" + error.code);
+						console.log("errorCode :" + error.code);
           }
         });
       }
