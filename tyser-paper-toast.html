@@ -1,0 +1,26 @@
+<link rel="import" href="paper-toast/paper-toast.html">
+<dom-module id="tyser-paper-toast">
+  <template>
+    <style>
+		paper-toast{
+		 display:flex;
+		 justify-content: center;
+		 word-break: break-all;
+		 margin:10px;
+		}
+    </style>
+	
+    <paper-toast class="fit-bottom"></paper-toast>
+  </template>
+  <script>
+    class TyserPaperToast extends Polymer.Element {
+      static get is() {
+      return "tyser-paper-toast";
+      }
+      constructor() {
+        super();
+      }
+    }
+    customElements.define(TyserPaperToast.is, TyserPaperToast);
+  </script>
+</dom-module>
