@@ -46,9 +46,9 @@
 <div class="container1">
 		<paper-card image="login.png" alt="Pulse" class="white login_card">
 			<div class="card-content">
-				<paper-input label="Username" id="email" ng-model="email" char-counter required>
+				<paper-input label="Username" id="email" ng-model="email" char-counter required auto-validate error-message="Need Username">
 				</paper-input>
-				<paper-input label="Password" id="password" type="password" ng-model="password" char-counter required>
+				<paper-input label="Password" id="password" type="password" ng-model="password" char-counter required auto-validate error-message="Need Password">
 				</paper-input>
 			</div>
 			<div class="card-actions">
