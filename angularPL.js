@@ -24,13 +24,14 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 			console.log("errorMessage signup:" + errorMessage);
 			console.log("errorCode signup:" + errorCode);
 			if (error.code === 'auth/invalid-email') {
-				alert('Please enter valid email.');
+				document.querySelector('paper-toast').show("Please enter valid email.");
 			} 
 			else if (error.code === 'auth/weak-password') {
-				alert('Password should be at least 6 characters');	
+				document.querySelector('paper-toast').show("Password should be at least 6 characters");
 			} 		  
 			else {
-				alert(error.message);
+				var temp = error.message;
+				document.querySelector('paper-toast').show(temp);
 				console.log("errorCode :" + error.code);
 			}
 		});
