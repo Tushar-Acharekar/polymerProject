@@ -16,7 +16,7 @@
           else if (error.code === 'auth/user-not-found') {
 						document.querySelector('paper-toast').show("User not found, Please SignUP.");
           } 	
-          else if (error.code === 'auth/argument-error') {
+          else if (error.code === 'auth/invalid-email') {
 						document.querySelector('paper-toast').show("Please enter valid username and password.");
           }					
 		  else {
