@@ -14,14 +14,9 @@
     <paper-toast class="fit-bottom"></paper-toast>
   </template>
   <script>
-    class TyserPaperToast extends Polymer.Element {
-      static get is() {
-      return "tyser-paper-toast";
-      }
-      constructor() {
-        super();
-      }
-    }
-    customElements.define(TyserPaperToast.is, TyserPaperToast);
+    Polymer({
+      is: 'tyser-paper-toast'
+
+    });
   </script>
 </dom-module>
