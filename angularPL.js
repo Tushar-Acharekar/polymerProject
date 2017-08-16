@@ -2,8 +2,9 @@
 var module1 = angular.module("MODULE1", ["ngRoute", "firebase", "ng-polymer-elements"]);
 
 module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $firebaseObject, $firebaseArray) {
-	//$scope.email = "acharekart@gmail.com";
-	//$scope.password = "Pass@123";
+	$scope.getInput = document.querySelectorAll('paper-input');
+	$scope.name; 
+	$scope.signupFlagHide = true;
 	var auth = $firebaseAuth();
 	
 	$scope.functionSignIn = function () {
@@ -11,30 +12,42 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	};
 
 	$scope.functionSignUp = function () {
-		auth.$createUserWithEmailAndPassword($scope.email, $scope.password).then(function(value) {
-			var usersRef = firebase.database().ref().child("users");
-			var person = {  
-					"name": $scope.name,
-					"email": value.email					
-				};
-			usersRef.child(value.uid).set(person);
-		}).catch(function(error) {
-			var errorCode = error.code;
-			var errorMessage = error.message;
-			console.log("errorMessage signup:" + errorMessage);
-			console.log("errorCode signup:" + errorCode);
-			if (error.code === 'auth/invalid-email') {
-				document.querySelector('paper-toast').show("Please enter valid email.");
-			} 
-			else if (error.code === 'auth/weak-password') {
-				document.querySelector('paper-toast').show("Password should be at least 6 characters");
-			} 		  
-			else {
-				var temp = error.message;
-				document.querySelector('paper-toast').show(temp);
-				console.log("errorCode :" + error.code);
+		if($scope.signupFlagHide){
+			$scope.signupFlagHide = false;
+		}
+		else if ($scope.name === undefined){
+			for (i = $scope.getInput.length-1; i >= 0 ; i--) {	
+			if(!$scope.getInput[i].invalid){
+				$scope.getInput[i].validate(true);
+				}
 			}
-		});
+		}
+		else{
+					auth.$createUserWithEmailAndPassword($scope.email, $scope.password).then(function(value) {
+						var usersRef = firebase.database().ref().child("users");
+						var person = {  
+								"name": $scope.name,
+								"email": value.email					
+							};
+						usersRef.child(value.uid).set(person);
+					}).catch(function(error) {
+							var errorCode = error.code;
+							var errorMessage = error.message;
+							console.log("errorMessage signup:" + errorMessage);
+							console.log("errorCode signup:" + errorCode);
+							if (error.code === 'auth/invalid-email') {
+								document.querySelector('paper-toast').show("Please enter valid email.");
+							} 
+							else if (error.code === 'auth/weak-password') {
+								document.querySelector('paper-toast').show("Password should be at least 6 characters");
+							} 		  
+							else {
+								var temp = error.message;
+								document.querySelector('paper-toast').show(temp);
+								console.log("errorCode :" + error.code);
+							}
+				});
+		}
 	};
 
 	$scope.functionSignOut = function () {

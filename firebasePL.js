@@ -28,7 +28,7 @@
       }
 	  
 	  
-/* This is code to signUp the user*/	  
+/* This is code to signUp the user	  
 	function firebaseSignUp(){
 		  var email = document.getElementById('email').value;
 		  var password = document.getElementById('password').value;
@@ -58,7 +58,7 @@
 				document.querySelector('paper-toast').show(temp);
 			}
 		});
-	}
+	}*/
 	
 /* This is code to signUp the user*/	
 	function firebaseSignOut() {
