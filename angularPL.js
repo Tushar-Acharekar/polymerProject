@@ -61,11 +61,18 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	
 	auth.$onAuthStateChanged(function(user) {
 		if (user) {
-			console.log(user.email);
 			$location.path( "/home" );
 			var ref = firebase.database().ref().child("users").child(user.uid);
-			$scope.messages = $firebaseObject(ref); 
-			console.log($scope.messages); 
+			$scope.messages = $firebaseObject(ref);
+				$scope.messages.$loaded(
+						function(data) {
+						console.log($scope.messages); 
+						$scope.dpName = $scope.messages.name;
+						},
+						function(error) {
+						console.error("Errorrrrrrrrrrrr:", error);
+						}
+				);
 		}else{
 			console.log("No user logged...!");
 			$location.path( "/" );
