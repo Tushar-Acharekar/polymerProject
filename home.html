@@ -65,7 +65,12 @@
 		</app-drawer>
 		  
 		<paper-card image="login.png" alt="House" class="white" style="margin-bottom:8px;">
-		  <div class="card-content">Congratulation, You have logged in successfully.</div>
+		  <div class="card-content">
+				<ul>
+					<li ng-repeat="message in messages">{{ message }}<li>
+				</ul>
+				Congratulation, You have logged in successfully.
+			</div>
 		  <div class="card-actions">
 			<paper-icon-button icon="favorite"></paper-icon-button>
 			<paper-icon-button icon="bookmark"></paper-icon-button>

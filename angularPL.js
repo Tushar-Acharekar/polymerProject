@@ -8,7 +8,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	var auth = $firebaseAuth();
 	
 	$scope.functionSignIn = function () {
-		if($scope.signupFlagHide == false){
+		if($scope.signupFlagHide === false){
 			$scope.signupFlagHide = true;
 		}
 		else{
