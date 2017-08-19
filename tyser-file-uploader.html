@@ -1,4 +1,3 @@
-<link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/vaadin-upload/vaadin-upload.html">
 <dom-module id="tyser-file-uploader">
   <template>
@@ -20,7 +19,10 @@
 		  }
 		</style>
 
-		<vaadin-upload class="thick-border"></vaadin-upload>
+		<vaadin-upload>
+			<iron-icon slot="drop-label-icon" icon="cloud-upload"></iron-icon>
+			<span slot="drop-label">Drop files to&nbsp;the&nbsp;cloud...</span>
+		</vaadin-upload>
   </template>
   <script>
     Polymer({
