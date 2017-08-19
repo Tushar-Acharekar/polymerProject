@@ -60,6 +60,5 @@
   },
   "_source": "git://github.com/BrightspaceUI/file-uploader.git",
   "_target": "^0.2.0",
-  "_originalSource": "BrightspaceUI/file-uploader",
-  "_direct": true
+  "_originalSource": "BrightspaceUI/file-uploader"
 }

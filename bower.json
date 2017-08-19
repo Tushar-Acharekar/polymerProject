@@ -26,7 +26,6 @@
     "ng-polymer-elements": "^0.3.0",
     "paper-item": "PolymerElements/paper-item#^2.0.0",
     "paper-toast": "PolymerElements/paper-toast#^2.0.0",
-    "d2l-file-uploader": "BrightspaceUI/file-uploader#^0.2.0",
-    "vaadin-upload": "^2.0.0"
+    "d2l-file-uploader": "BrightspaceUI/file-uploader#^0.2.0"
   }
 }
