@@ -100,7 +100,6 @@
     "commit": "2ca920801919cd26be29693a51ce4b4184ebf39a"
   },
   "_source": "https://github.com/vaadin/vaadin-upload.git",
-  "_target": "^2.0.0",
-  "_originalSource": "vaadin-upload",
-  "_direct": true
+  "_target": "2.0.0",
+  "_originalSource": "vaadin-upload"
 }
