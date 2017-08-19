@@ -59,6 +59,11 @@
 			}
 		});
 	}*/
+
+
+function uploadFile() {
+	
+}
 	
 /* This is code to signUp the user*/	
 	function firebaseSignOut() {

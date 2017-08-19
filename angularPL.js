@@ -35,6 +35,15 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 								"email": value.email					
 							};
 						usersRef.child(value.uid).set(person);
+						/*start code for setting profile dp*/
+						var storageRef1 = firebase.storage();
+						var evt = document.getElementById("myFile");
+						var fileNameFull = evt.value;
+						var atualFileNmae = fileNameFull.replace(/.*[\/\\]/, '');
+						var storageRef = storageRef1.ref("/images/" + value.uid + "/" + atualFileNmae);
+						var firstFile = evt.files[0]; 
+						var uploadTask = storageRef.put(firstFile); 
+						/*end code for setting profile dp*/
 					}).catch(function(error) {
 							var errorCode = error.code;
 							var errorMessage = error.message;
