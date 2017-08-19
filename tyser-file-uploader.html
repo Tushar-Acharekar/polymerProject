@@ -1,0 +1,31 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/vaadin-upload/vaadin-upload.html">
+<dom-module id="tyser-file-uploader">
+  <template>
+		<style>
+		  vaadin-upload.thick-border {
+			--primary-color: #396;
+			--dark-primary-color: #063;
+			--light-primary-color: #6c9;
+			--error-color: darkred;
+
+			border: 2px solid #ccc;
+			padding: 14px;
+			background: #eee;
+			border-radius: 0;
+		  }
+
+		  vaadin-upload.thick-border[dragover] {
+			border-color: #396;
+		  }
+		</style>
+
+		<vaadin-upload class="thick-border"></vaadin-upload>
+  </template>
+  <script>
+    Polymer({
+      is: 'tyser-file-uploader'
+
+    });
+  </script>
+</dom-module>
