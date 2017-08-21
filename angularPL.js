@@ -38,9 +38,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 						/*start code for setting profile dp*/
 						var storageRef1 = firebase.storage();
 						var evt = document.getElementById("myFile");
-						var fileNameFull = evt.value;
-						var atualFileNmae = fileNameFull.replace(/.*[\/\\]/, '');
-						var storageRef = storageRef1.ref("/images/" + value.uid + "/" + atualFileNmae);
+						var storageRef = storageRef1.ref("/images/" + value.uid + "/profileDP/profileDP.png");
 						var firstFile = evt.files[0]; 
 						var uploadTask = storageRef.put(firstFile); 
 						/*end code for setting profile dp*/
@@ -77,6 +75,11 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 						function(data) {
 						console.log($scope.messages); 
 						$scope.dpName = $scope.messages.name;
+							var storageRef = firebase.storage();
+							var dateRef = storageRef.ref("/images/" + user.uid + "/profileDP/profileDP.png");
+							dateRef.getDownloadURL().then(function (url) {
+								document.querySelector('paper-card').image = url;
+							});							
 						},
 						function(error) {
 						console.error("Errorrrrrrrrrrrr:", error);
