@@ -78,7 +78,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 							var storageRef = firebase.storage();
 							var dateRef = storageRef.ref("/images/" + user.uid + "/profileDP/profileDP.png");
 							dateRef.getDownloadURL().then(function (url) {
-								document.querySelector('paper-card').image = url;
+								document.querySelector('paper-avatar').src = url;
 							});							
 						},
 						function(error) {
