@@ -97,20 +97,19 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	$scope.addData = function () {
 		$scope.getInput = document.querySelectorAll('#animated paper-input');
 		for (i = $scope.getInput.length-1; i >= 0 ; i--) {	
-			if(!$scope.getInput[i].invalid){
+			if($scope.getInput[i].invalid){
 				$scope.getInput[i].validate(true);
 				$scope.flag1 = 1;
 			}
 		}
 		
 		if ($scope.flag1 === 0) {
-			alert("done");
-/* 			var usersRef = firebase.database().ref().child("users");
+ 			var usersRef = firebase.database().ref().child("users");
 			var person = {  
 					"title": $scope.noteTitle,
-					"note": value.noteData					
+					"note": $scope.noteData					
 				};
-			usersRef.child(value.uid).child("NoteList").child("1").set(person); */
+			usersRef.child(value.uid).child("NoteList").child("1").set(person); 
 		}
 		else{
 			$scope.flag1 = 0;
