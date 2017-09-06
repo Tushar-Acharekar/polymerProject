@@ -69,6 +69,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	auth.$onAuthStateChanged(function(user) {
 		if (user) {
 			$location.path( "/home" );
+			$scope.userUID = user.uid;
 			var ref = firebase.database().ref().child("users").child(user.uid);
 			$scope.messages = $firebaseObject(ref);
 				$scope.messages.$loaded(
@@ -109,7 +110,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 					"title": $scope.noteTitle,
 					"note": $scope.noteData					
 				};
-			usersRef.child(value.uid).child("NoteList").child("1").set(person); 
+			usersRef.child($scope.userUID).child("NoteList").child("1").set(person); 
 		}
 		else{
 			$scope.flag1 = 0;
