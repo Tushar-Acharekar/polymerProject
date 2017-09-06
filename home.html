@@ -88,16 +88,13 @@
 		  </div>
 		</paper-card>
 			
-		<div ng-repeat="message in messages1">
-		<paper-card class="white" style="margin-bottom:8px;">
-			<div class="card-header">
-				<h2>{{message.title}}</h2>							
-			</div>
-			<div class="card-body">
-				<p>{{message.note}}</p>						
-			</div>
-		</paper-card>
-			</div>
+		<ul ng-repeat="message in messages1">
+			<li>
+					<h2>{{message.title}}</h2>							
+					<p>{{message.note}}</p>	
+				  <br>
+			</li>
+		</ul>
 			
 		<paper-fab icon="add" raised onclick="animated.open()"></paper-fab>
 
