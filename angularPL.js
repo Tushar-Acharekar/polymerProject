@@ -105,12 +105,30 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		}
 		
 		if ($scope.flag1 === 0) {
- 			var usersRef = firebase.database().ref().child("users");
+			var ref = firebase.database().ref("users/" + $scope.userUID);
+			$scope.noteTitle = "title1";
+			$scope.noteData = "Note is here2222";
 			var person = {  
 					"title": $scope.noteTitle,
 					"note": $scope.noteData					
 				};
-			usersRef.child($scope.userUID).child("NoteList").child("1").set(person); 
+			ref.once("value")
+			  .then(function(snapshot) {
+				var hasName = snapshot.hasChild("NoteList");
+				var noteCount = snapshot.child("NoteList").numChildren();
+				ref.child("NoteList").child(noteCount+1).set(person);
+				document.querySelector('paper-dialog paper-button').click();
+							var refSub = ref.child("NoteList");
+							$scope.messages1 = $firebaseObject(refSub); 
+								$scope.messages1.$loaded(
+								  function(data) { 
+									console.log($scope.messages1);
+								  },
+								  function(error) {
+									console.error("Errorrrrrrrrrrrr:", error);
+								  }
+								);
+			  });
 		}
 		else{
 			$scope.flag1 = 0;
