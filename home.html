@@ -88,7 +88,12 @@
 		  </div>
 		</paper-card>
 			
-		<paper-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+		<paper-fab icon="add" raised onclick="animated.open()"></paper-fab>
+
+    </app-drawer-layout>
+  </app-header-layout>
+
+		<paper-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
 			<div class="dialogHeader">
 				<h2>Create Note</h2>							
 			</div>
@@ -103,11 +108,6 @@
 				<paper-button dialog-dismiss ng-click="cancelData()">Cancel</paper-button>
 			</div>
 		</paper-dialog>
-			
-		<paper-fab icon="add" raised onclick="animated.open()"></paper-fab>
-
-    </app-drawer-layout>
-  </app-header-layout>
 
 
 
