@@ -88,7 +88,8 @@
 		  </div>
 		</paper-card>
 			
-		<paper-card class="white" style="margin-bottom:8px;" ng-repeat="message in messages1">
+		<div ng-repeat="message in messages1">
+		<paper-card class="white" style="margin-bottom:8px;">
 			<div class="card-header">
 				<h2>{{message.title}}</h2>							
 			</div>
@@ -96,6 +97,7 @@
 				<p>{{message.note}}</p>						
 			</div>
 		</paper-card>
+			</div>
 			
 		<paper-fab icon="add" raised onclick="animated.open()"></paper-fab>
 
