@@ -82,7 +82,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 								document.querySelector('paper-avatar').src = url;
 								document.querySelector('paper-card').image = url;
 							});	
-							timelineData();
+
 						},
 						function(error) {
 						console.error("Errorrrrrrrrrrrr:", error);
