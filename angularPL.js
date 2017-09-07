@@ -117,7 +117,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 				ref.child("NoteList").child(noteCount+1).set(person);
 				document.querySelector('paper-dialog paper-button').click();
 							var refSub = ref.child("NoteList");
-							$scope.messages1 = $firebaseObject(refSub); 
+							$scope.messages1 = $firebaseArray(refSub); 
 								$scope.messages1.$loaded(
 								  function(data) { 
 									console.log($scope.messages1);
