@@ -106,8 +106,6 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		
 		if ($scope.flag1 === 0) {
 			var ref = firebase.database().ref("users/" + $scope.userUID);
-			$scope.noteTitle = "title1";
-			$scope.noteData = "Note is here2222";
 			var person = {  
 					"title": $scope.noteTitle,
 					"note": $scope.noteData					
