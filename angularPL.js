@@ -126,6 +126,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 									console.error("Errorrrrrrrrrrrr:", error);
 								  }
 								);
+				document.querySelector('paper-toast').show("Note created successfully....!");
 			  });
 		}
 		else{
