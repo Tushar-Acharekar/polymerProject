@@ -81,7 +81,8 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 							dateRef.getDownloadURL().then(function (url) {
 								document.querySelector('paper-avatar').src = url;
 								document.querySelector('paper-card').image = url;
-							});							
+							});	
+							timelineData();
 						},
 						function(error) {
 						console.error("Errorrrrrrrrrrrr:", error);
@@ -96,6 +97,18 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	/*************************************************************************************************************************************************/
 
 	$scope.addData = function () {
+		timelineData();
+	};	
+	
+	$scope.cancelData = function () {
+		$scope.getInput = document.querySelectorAll('#animated paper-input');
+		for (i = $scope.getInput.length-1; i >= 0 ; i--) {	
+			$scope.getInput[i].value = "";
+		}
+	};	
+/**********************************************************************************************************************************************/
+	
+	function timelineData(){
 		$scope.getInput = document.querySelectorAll('#animated paper-input');
 		for (i = $scope.getInput.length-1; i >= 0 ; i--) {	
 			if($scope.getInput[i].invalid){
@@ -131,16 +144,9 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		}
 		else{
 			$scope.flag1 = 0;
-		}
-	};	
+		}		
+	}
 	
-	$scope.cancelData = function () {
-		$scope.getInput = document.querySelectorAll('#animated paper-input');
-		for (i = $scope.getInput.length-1; i >= 0 ; i--) {	
-			$scope.getInput[i].value = "";
-		}
-	};	
-/**********************************************************************************************************************************************/
 });
 
 
