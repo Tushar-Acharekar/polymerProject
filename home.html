@@ -50,6 +50,10 @@
 		width: auto;
 	}
 	
+	.mdl-card__supporting-text{
+		min-height: 50px;
+	}
+	
 	.warpperUL{
 		list-style-type: none;
     padding-left: 0px;
@@ -112,7 +116,8 @@
 								</div>
 								<div class="mdl-card__supporting-text">	{{ message.note }}	</div>
 								<div class="mdl-card__actions mdl-card--border">
-									<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">	View Updates </a>
+									<paper-button id="editData" ng-click="editData()">Edit</paper-button>
+									<paper-button id="deleteData" ng-click="deleteData()">Delete</paper-button>
 								</div>
 							</div>
 				</li>
