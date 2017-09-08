@@ -76,13 +76,14 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 						function(data) {
 						console.log($scope.messages); 
 						$scope.dpName = $scope.messages.name;
+							dataOnstatechnge();
 							var storageRef = firebase.storage();
 							var dateRef = storageRef.ref("/images/" + user.uid + "/profileDP/profileDP.png");
 							dateRef.getDownloadURL().then(function (url) {
 								document.querySelector('paper-avatar').src = url;
 								document.querySelector('paper-card').image = url;
 							});	
-							dataOnstatechnge();
+							
 						},
 						function(error) {
 						console.error("Errorrrrrrrrrrrr:", error);
@@ -153,13 +154,13 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		$scope.messages1 = $firebaseObject(refSub); 
 			$scope.messages1.$loaded(
 				function(data) { 
+					alert("stateChange");
 				console.log($scope.messages1);
 				},
 				function(error) {
 				console.error("Errorrrrrrrrrrrr:", error);
 				}
 			);
-
 	}
 	
 });
