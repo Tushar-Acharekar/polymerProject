@@ -82,7 +82,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 								document.querySelector('paper-avatar').src = url;
 								document.querySelector('paper-card').image = url;
 							});	
-							timelineData();
+							dataOnstatechnge();
 						},
 						function(error) {
 						console.error("Errorrrrrrrrrrrr:", error);
@@ -145,6 +145,21 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		else{
 			$scope.flag1 = 0;
 		}		
+	}
+	
+	function dataOnstatechnge(){
+		var ref = firebase.database().ref("users/" + $scope.userUID);
+		var refSub = ref.child("NoteList");
+		$scope.messages1 = $firebaseObject(refSub); 
+			$scope.messages1.$loaded(
+				function(data) { 
+				console.log($scope.messages1);
+				},
+				function(error) {
+				console.error("Errorrrrrrrrrrrr:", error);
+				}
+			);
+
 	}
 	
 });
