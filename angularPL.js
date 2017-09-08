@@ -5,6 +5,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	$scope.getInput = document.querySelectorAll('paper-input');
 	$scope.name; 
 	$scope.signupFlagHide = true;
+	$scope.flag1 = 0;
 	var auth = $firebaseAuth();
 	
 	$scope.functionSignIn = function () {
@@ -118,7 +119,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 			}
 		}
 		
-		if ($scope.flag1 === 0) {
+		if ($scope.flag1 == 0) {
 			var ref = firebase.database().ref("users/" + $scope.userUID);
 			var person = {  
 					"title": $scope.noteTitle,
@@ -154,7 +155,6 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		$scope.messages1 = $firebaseObject(refSub); 
 			$scope.messages1.$loaded(
 				function(data) { 
-					alert("stateChange");
 				console.log($scope.messages1);
 				},
 				function(error) {
