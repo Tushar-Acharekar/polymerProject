@@ -45,6 +45,12 @@
 	.mdl-card {
 		margin-top: 20px !important;
 		background-color: darkseagreen;
+		max-width: 400px;
+	}
+	
+	.warpperUL{
+		list-style-type: none;
+    padding-left: 0px;
 	}
     </style>
 
@@ -96,7 +102,7 @@
 		  </div>
 		</paper-card>
 			
-			<ul>
+			<ul class="warpperUL">
 				<li ng-repeat="message in messages1">
 							<div class="demo-card-square mdl-card mdl-shadow--2dp">
 								<div class="mdl-card__title mdl-card--expand">
