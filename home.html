@@ -96,11 +96,9 @@
 		  </div>
 		</paper-card>
 			
-			<ul>
-				<li ng-repeat="message in messages1">
-					<p> {{ message }} </p>
-				</li>
-			</ul>
+				<div ng-repeat="message in messages1">
+					<p> {{message}} </p>
+				</div>
 			
 		<paper-fab icon="add" raised onclick="animated.open()"></paper-fab>
 
@@ -122,9 +120,6 @@
 				<paper-button dialog-dismiss id="cancelData" ng-click="cancelData()">Cancel</paper-button>
 			</div>
 		</paper-dialog>
-
-
-
 
 
 
