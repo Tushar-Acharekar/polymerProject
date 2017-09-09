@@ -111,7 +111,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		$scope.getInput = document.querySelectorAll('#animated paper-input');
 		for (i = $scope.getInput.length-1; i >= 0 ; i--) {	
 			$scope.getInput[i].value = "";
-			$scope.getInput[i].validate(flase);
+			$scope.getInput[i].validate(false);
 		}
 	};	
 	
