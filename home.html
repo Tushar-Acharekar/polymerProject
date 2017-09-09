@@ -115,14 +115,14 @@
 
 			<ul class="warpperUL">
 				<li ng-repeat="message in messages1">
-							<div class="demo-card-square mdl-card mdl-shadow--2dp">
+							<div class="demo-card-square mdl-card mdl-shadow--2dp"  id={{message.id}}>
 								<div class="mdl-card__title">
 									<h2 class="mdl-card__title-text"> {{ message.title }} </h2>
 								</div>
 								<div class="mdl-card__supporting-text">	{{ message.note }}	</div>
 								<div class="mdl-card__actions mdl-card--border">
 									<paper-icon-button icon="create" id="editData" ng-click="editData()"></paper-icon-button>
-									<paper-icon-button icon="favorite-border" id="favoriteData"></paper-icon-button>
+									<paper-icon-button icon="favorite-border" id="favoriteData" ng-click="favoriteData(this.id)"></paper-icon-button>
 									<paper-icon-button icon="content-copy" id="copyData"></paper-icon-button>
 									<paper-icon-button icon="delete" id="deleteData" ng-click="deleteData()"></paper-icon-button>
 								</div>

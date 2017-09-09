@@ -111,8 +111,13 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		$scope.getInput = document.querySelectorAll('#animated paper-input');
 		for (i = $scope.getInput.length-1; i >= 0 ; i--) {	
 			$scope.getInput[i].value = "";
+			$scope.getInput[i].validate(flase);
 		}
 	};	
+	
+		$scope.	favoriteData = function () {
+			$scope.favoriteStatus = document.querySelector('#favoriteData');
+	};
 	
 /**********************************************************************************************************************************************/
 	
@@ -125,31 +130,28 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 			}
 		}
 		
-		if ($scope.flag1 == 0) {
+		if ($scope.flag1 == "0") {
 			var ref = firebase.database().ref("users/" + $scope.userUID);
-			var person = {  
-					"title": $scope.noteTitle,
-					"note": $scope.noteData					
-				};
+			$scope.noteCount = "noteCount_" + Math.round((new Date().getTime() / 1000));
+			
 			ref.once("value")
-			  .then(function(snapshot) {
-				var hasName = snapshot.hasChild("NoteList");
-				var noteCount = snapshot.child("NoteList").numChildren();
-				ref.child("NoteList").child(noteCount+1).set(person);
-				document.querySelector('paper-dialog #cancelData').click();
-							var refSub = ref.child("NoteList");
-							$scope.messages1 = $firebaseObject(refSub); 
+				.then(function(snapshot) {
+						var person = {  
+							"id": $scope.noteCount,
+							"title": $scope.noteTitle,
+							"note": $scope.noteData
+						};
+
+						ref.child("NoteList").child($scope.noteCount).set(person);
+						document.querySelector('paper-dialog #cancelData').click();
+								$scope.messages1 = $firebaseArray(ref.child("NoteList")); 
 								$scope.messages1.$loaded(
-								  function(data) { 
-									console.log($scope.messages1);
-								  },
-								  function(error) {
-									console.error("Errorrrrrrrrrrrr:", error);
-								  }
+									function(data) {console.log($scope.messages1);},
+									function(error) {console.error("Error occurs in data loading..!:", error);}
 								);
-				document.querySelector('paper-toast').show("Note created successfully....!");
+						document.querySelector('paper-toast').show("Note created successfully....!");
 			  });
-		}
+		}		
 		else{
 			$scope.flag1 = 0;
 		}		
@@ -157,16 +159,11 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	
 	function dataOnstatechnge(){
 		var ref = firebase.database().ref("users/" + $scope.userUID);
-		var refSub = ref.child("NoteList");
-		$scope.messages1 = $firebaseObject(refSub); 
-			$scope.messages1.$loaded(
-				function(data) { 
-				console.log($scope.messages1);
-				},
-				function(error) {
-				console.error("Errorrrrrrrrrrrr:", error);
-				}
-			);
+		$scope.messages1 = $firebaseObject(ref.child("NoteList")); 
+		$scope.messages1.$loaded(
+			function(data) {console.log($scope.messages1);},
+			function(error) {console.error("Error occurs in data loading..!:", error);}
+		);
 	}
 	
 	function deleteTimelineData(){
