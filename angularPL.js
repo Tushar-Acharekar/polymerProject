@@ -102,12 +102,18 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		timelineData();
 	};	
 	
+	$scope.deleteData= function () {
+		deleteTimelineData();
+	};	
+	
+	
 	$scope.cancelData = function () {
 		$scope.getInput = document.querySelectorAll('#animated paper-input');
 		for (i = $scope.getInput.length-1; i >= 0 ; i--) {	
 			$scope.getInput[i].value = "";
 		}
 	};	
+	
 /**********************************************************************************************************************************************/
 	
 	function timelineData(){
@@ -150,6 +156,20 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	}
 	
 	function dataOnstatechnge(){
+		var ref = firebase.database().ref("users/" + $scope.userUID);
+		var refSub = ref.child("NoteList");
+		$scope.messages1 = $firebaseObject(refSub); 
+			$scope.messages1.$loaded(
+				function(data) { 
+				console.log($scope.messages1);
+				},
+				function(error) {
+				console.error("Errorrrrrrrrrrrr:", error);
+				}
+			);
+	}
+	
+	function deleteTimelineData(){
 		var ref = firebase.database().ref("users/" + $scope.userUID);
 		var refSub = ref.child("NoteList");
 		$scope.messages1 = $firebaseObject(refSub); 
