@@ -111,12 +111,23 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		$scope.getInput = document.querySelectorAll('#animated paper-input');
 		for (i = $scope.getInput.length-1; i >= 0 ; i--) {	
 			$scope.getInput[i].value = "";
-			$scope.getInput[i].validate(false);
+			$scope.getInput[i].invalid = false;
 		}
 	};	
 	
-		$scope.	favoriteData = function () {
-			$scope.favoriteStatus = document.querySelector('#favoriteData');
+	$scope.favoriteData = function (id) {
+			var ref = firebase.database().ref("users/" + $scope.userUID).child("NoteList").child(id);
+			ref.once("value")
+				.then(function(snapshot) {
+					$scope.favoriteDataValue = snapshot.val();
+					 console.log($scope.favoriteDataValue.favorite);
+					if($scope.favoriteDataValue.favorite == "favorite-border"){
+						snapshot.ref.update({"favorite": "favorite"});
+					  }
+					  else{
+						 snapshot.ref.update({"favorite": "favorite-border"});
+					  }
+			  });
 	};
 	
 /**********************************************************************************************************************************************/
