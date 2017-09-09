@@ -150,7 +150,8 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 						var person = {  
 							"id": $scope.noteCount,
 							"title": $scope.noteTitle,
-							"note": $scope.noteData
+							"note": $scope.noteData,
+							"favorite": "favorite-border"
 						};
 
 						ref.child("NoteList").child($scope.noteCount).set(person);
