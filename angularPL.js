@@ -123,6 +123,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 					 console.log($scope.favoriteDataValue.favorite);
 					if($scope.favoriteDataValue.favorite == "favorite-border"){
 						snapshot.ref.update({"favorite": "favorite"});
+						document.querySelector('paper-toast').show("Added to Favorited");
 					  }
 					  else{
 						 snapshot.ref.update({"favorite": "favorite-border"});
