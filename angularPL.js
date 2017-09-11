@@ -103,6 +103,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	};	
 	
 	$scope.deleteData= function (id) {
+		console.log("id == " + id);
 		deleteTimelineData(id);
 	};	
 	
@@ -129,10 +130,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 					  }
 			  });
 	};
-	
-	$scope.deleteFlag = function (id) {
-		$scope.deleteConfirm = 1;
-	}
+
 	
 /**********************************************************************************************************************************************/
 	
@@ -186,10 +184,8 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		var ref = firebase.database().ref("users/" + $scope.userUID).child("NoteList").child(id);
 		ref.once("value")
 			.then(function(snapshot) {
-				if($scope.deleteConfirm == 1){
 					snapshot.ref.remove();
 					document.querySelector('paper-toast').show("Note deleted successfully..!");
-					}
 			});
 	}
 	
