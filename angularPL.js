@@ -99,16 +99,16 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	/*************************************************************************************************************************************************/
 
 	$scope.addData = function () {
-		timelineData();
+		addingData();
 	};	
 	
-	$scope.deleteData= function () {
-		deleteTimelineData();
+	$scope.deleteData= function (id) {
+		deleteTimelineData(id);
 	};	
 	
 	
 	$scope.cancelData = function () {
-		$scope.getInput = document.querySelectorAll('#animated paper-input');
+		$scope.getInput = document.querySelectorAll('#addNoteButton paper-input');
 		for (i = $scope.getInput.length-1; i >= 0 ; i--) {	
 			$scope.getInput[i].value = "";
 			$scope.getInput[i].invalid = false;
@@ -120,7 +120,6 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 			ref.once("value")
 				.then(function(snapshot) {
 					$scope.favoriteDataValue = snapshot.val();
-					 console.log($scope.favoriteDataValue.favorite);
 					if($scope.favoriteDataValue.favorite == "favorite-border"){
 						snapshot.ref.update({"favorite": "favorite"});
 						document.querySelector('paper-toast').show("Added to Favorited");
@@ -131,10 +130,14 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 			  });
 	};
 	
+	$scope.deleteFlag = function (id) {
+		$scope.deleteConfirm = 1;
+	}
+	
 /**********************************************************************************************************************************************/
 	
-	function timelineData(){
-		$scope.getInput = document.querySelectorAll('#animated paper-input');
+	function addingData(){
+		$scope.getInput = document.querySelectorAll('#addNoteButton paper-input');
 		for (i = $scope.getInput.length-1; i >= 0 ; i--) {	
 			if($scope.getInput[i].invalid){
 				$scope.getInput[i].validate(true);
@@ -179,18 +182,15 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		);
 	}
 	
-	function deleteTimelineData(){
-		var ref = firebase.database().ref("users/" + $scope.userUID);
-		var refSub = ref.child("NoteList");
-		$scope.messages1 = $firebaseObject(refSub); 
-			$scope.messages1.$loaded(
-				function(data) { 
-				console.log($scope.messages1);
-				},
-				function(error) {
-				console.error("Errorrrrrrrrrrrr:", error);
-				}
-			);
+	function deleteTimelineData(id){
+		var ref = firebase.database().ref("users/" + $scope.userUID).child("NoteList").child(id);
+		ref.once("value")
+			.then(function(snapshot) {
+				if($scope.deleteConfirm == 1){
+					snapshot.ref.remove();
+					document.querySelector('paper-toast').show("Note deleted successfully..!");
+					}
+			});
 	}
 	
 });

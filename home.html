@@ -128,18 +128,18 @@
 									<paper-icon-button icon="create" class="editData" ng-click="editData()"></paper-icon-button>
 									<paper-icon-button icon="{{ message.favorite }}" class="favoriteData" ng-click="favoriteData(message.id)"></paper-icon-button>
 									<paper-icon-button icon="content-copy" class="copyData"></paper-icon-button>
-									<paper-icon-button icon="delete" class="deleteData" ng-click="deleteData()"></paper-icon-button>
+									<paper-icon-button icon="delete" class="deleteData" ng-click="deleteData(message.id)" onclick="deleteNoteButton.open()"></paper-icon-button>
 								</div>
 							</div>
 				</li>
 			</ul>
 
-			<paper-fab icon="add" raised onclick="animated.open()"></paper-fab>
+			<paper-fab icon="add" raised onclick="addNoteButton.open()"></paper-fab>
 
     </app-drawer-layout>
   </app-header-layout>
 
-		<paper-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+		<paper-dialog id="addNoteButton" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
 			<div class="dialogHeader">
 				<h3>Create Note</h3>
 			</div>
@@ -152,6 +152,19 @@
 			<div class="dialogActions">
 				<paper-button autofocus id="addData" ng-click="addData()">Save</paper-button>
 				<paper-button dialog-dismiss id="cancelData" ng-click="cancelData()">Cancel</paper-button>
+			</div>
+		</paper-dialog>
+
+		<paper-dialog id="deleteNoteButton" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+			<div class="dialogHeader">
+				<h4>Delete Note</h4>
+			</div>
+			<div class="dialogBody">
+				<div>Are you sure want to Delete....?</div>						
+			</div>
+			<div class="dialogActions">
+				<paper-button autofocus ng-init="deleteConfirm=0" ng-click="deleteFlag()">Delete</paper-button>
+				<paper-button dialog-dismiss>Cancel</paper-button>
 			</div>
 		</paper-dialog>
 
