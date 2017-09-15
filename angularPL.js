@@ -184,11 +184,11 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		var ref = firebase.database().ref("users/" + $scope.userUID).child("NoteList").child(id);
 		$scope.virtualRef = $firebaseObject(ref);
 		$scope.virtualRef.$remove().then(function(ref) {
-			alert("deleted");
+			document.querySelector('paper-toast').show("Note deleted successfully..!");
 		}, function(error) {
-			console.log("Errorrrrrrrrrrrrrrr:", error);
+			console.log("Error.....", error);
+			document.querySelector('paper-toast').show(error);
 		});
-	
 	}
 	
 });
