@@ -191,6 +191,10 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		});
 	}
 	
+	function showData(){
+			document.querySelector('#ooo').open();
+	}
+
 });
 
 

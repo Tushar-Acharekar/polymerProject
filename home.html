@@ -136,13 +136,11 @@
 
 			<paper-fab icon="add" raised onclick="addNoteButton.open()"></paper-fab>
 			
-			<tyser-iron-dropdown>
-				  <button slot="dropdown-trigger">Basic</button>
-					<div slot="dropdown-content" class="random-content">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-						in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</div>
-			</tyser-iron-dropdown>
+			<iron-dropdown id ="ooo" horizontal-align="right" vertical-align="top">
+				<div slot="dropdown-content">Hello!</div>
+			</iron-dropdown>
+			
+			<paper-button ng-click="showData()">show</paper-button>
 
     </app-drawer-layout>
   </app-header-layout>
