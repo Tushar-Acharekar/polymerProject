@@ -182,8 +182,8 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	
 	function deleteTimelineData(id){
 		var ref = firebase.database().ref("users/" + $scope.userUID).child("NoteList").child(id);
-
-		ref.$remove().then(function(ref) {
+		$scope.virtualRef = $firebaseObject(ref);
+		$scope.virtualRef.$remove().then(function(ref) {
 			alert("deleted");
 		}, function(error) {
 			console.log("Errorrrrrrrrrrrrrrr:", error);
