@@ -90,7 +90,19 @@
       <app-toolbar>
         <paper-icon-button id="toggle" icon="menu"></paper-icon-button>
         <div main-title>Rain-Data-Store</div>
-				<paper-avatar id="avatarDp" src="" ng-click="openAccount()"></paper-avatar>
+				<!--<paper-avatar id="avatarDp" src="" ng-click="openAccount()"></paper-avatar>-->
+				<paper-fab-morph is-overlay-content class="top-left">
+					<paper-avatar id="avatarDp" src="" class="dropdown-trigger"></paper-avatar>
+					<!--<paper-fab id="dd" raised class="dropdown-trigger"></paper-fab>-->
+					<paper-dialog id="dialogDisplayAccount" class="dropdown-content" with-backdrop="true">
+						<div class="dialogBody">
+								Hi {{ dpName }}, This is your account..!								
+						</div>
+						<div class="dialogActions">
+								<paper-icon-button icon="power-settings-new" class="sign-out" id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()"></paper-icon-button>
+						</div>
+					</paper-dialog>
+        </paper-fab-morph>
       </app-toolbar>
     </app-header>
 
@@ -160,17 +172,7 @@
 					</paper-dialog>
         </paper-fab-morph>
 
-			  <paper-fab-morph is-overlay-content class="top-left">
-					<paper-fab id="hiddenBtnDisplayAccount" raised class="dropdown-trigger"></paper-fab>
-					<paper-dialog id="dialogDisplayAccount" class="dropdown-content" with-backdrop="true">
-						<div class="dialogBody">
-								Hi {{ dpName }}, This is your account..!								
-						</div>
-						<div class="dialogActions">
-								<paper-icon-button icon="power-settings-new" class="sign-out" id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()"></paper-icon-button>
-						</div>
-					</paper-dialog>
-        </paper-fab-morph>
+
 
 		<!--<paper-dialog id="accountInfo" no-overlap horizontal-align="right" vertical-align="top">
 					<div>
