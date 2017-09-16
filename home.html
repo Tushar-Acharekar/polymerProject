@@ -74,7 +74,7 @@
       <app-toolbar>
         <paper-icon-button id="toggle" icon="menu"></paper-icon-button>
         <div main-title>Rain-Data-Store</div>
-				<paper-avatar src=""></paper-avatar>
+				<paper-avatar id="avatarDp" src="" ng-click="openAccount()"></paper-avatar>
       </app-toolbar>
     </app-header>
 
@@ -105,7 +105,7 @@
 				</div>
 			</app-drawer>
 
-			<paper-card image="" alt="House" class="white" style="margin-bottom:8px;">
+			<!--<paper-card image="" alt="House" class="white" style="margin-bottom:8px;">
 				<div class="card-content">
 					Congratulation {{ dpName }}, You have logged in successfully.
 				</div>
@@ -115,7 +115,7 @@
 				<paper-icon-button icon="social:share"></paper-icon-button>
 				<paper-button id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()">Sign Out</paper-button>
 				</div>
-			</paper-card>
+			</paper-card> -->
 
 			<ul class="warpperUL">
 				<li ng-repeat="message in messages1">
@@ -136,12 +136,6 @@
 
 			<paper-fab icon="add" raised onclick="addNoteButton.open()"></paper-fab>
 			
-			<iron-dropdown id ="ooo" horizontal-align="right" vertical-align="top">
-				<div slot="dropdown-content">Hello!</div>
-			</iron-dropdown>
-			
-			<paper-button ng-click="showData()">show</paper-button>
-
     </app-drawer-layout>
   </app-header-layout>
 
@@ -161,6 +155,17 @@
 			</div>
 		</paper-dialog>
 
+
+		<paper-dialog id="accountInfo" no-overlap horizontal-align="left" vertical-align="top">
+			<paper-dialog-scrollable>
+					<div class="dialogBody">
+					Hi {{ dpName }}, This is your account..!					
+					</div>
+					<div class="dialogActions">
+					<paper-icon-button icon="power-settings-new" class="sign-out" id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()"></paper-icon-button>
+					</div>		
+			</paper-dialog-scrollable>			
+		</paper-dialog>	
 
 
 

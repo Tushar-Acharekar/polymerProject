@@ -191,8 +191,10 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 		});
 	}
 	
-	function showData(){
-			document.querySelector('#ooo').open();
+	
+	$scope.openAccount = function (){
+		document.querySelector('#accountInfo').positionTarget = document.querySelector('#avatarDp');
+		document.querySelector('#accountInfo').open();
 	}
 
 });
