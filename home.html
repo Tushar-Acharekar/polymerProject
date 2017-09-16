@@ -1,7 +1,3 @@
-	<link rel="import" href="bower_components/paper-fab-transitions/paper-fab-morph.html">
-	<link rel="import" href="bower_components/paper-fab-transitions/paper-fab-speed-dial.html">
-	<link rel="import" href="bower_components/paper-fab-transitions/paper-fab-transitions.html">
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -39,7 +35,13 @@
 		max-width:400px;
 	}
 	
-
+	#addNote{
+		position:fixed;
+		bottom:28px;
+		right:28px;
+		background-color: #e57373;
+		z-index: 1000;
+	}
 	
 	.mdl-card {
 		background-color: #fff;
@@ -136,30 +138,37 @@
 				</li>
 			</ul>
 
+			<paper-fab id="addNote" icon="add" raised onclick="addNoteButton.open()"></paper-fab>
+			
+			  <paper-fab-morph is-overlay-content class="top-left">
+          <paper-fab icon="launch" class="dropdown-trigger"></paper-fab>
+          <paper-dialog class="dropdown-content">
+            <h2>Example Dialog</h2>
+
+            <div class="buttons">
+              <paper-button dialog-dismiss>Close</paper-button>
+            </div>
+          </paper-dialog>
+        </paper-fab-morph>
+			
     </app-drawer-layout>
   </app-header-layout>
 
-			
-			  <paper-fab-morph class="top-left">
-					<paper-fab id="addNote" class="dropdown-trigger" icon="add" raised></paper-fab>
-					<paper-dialog id="addNoteButton" with-backdrop="true">
-						<div class="dialogHeader">
-							<h3>Create Note</h3>
-						</div>
-						<div class="dialogBody">
-							<paper-input label="Title" id="noteTitle" ng-model="noteTitle" char-counter required auto-validate error-message="Need Title" autofocus>
-							</paper-input>
-							<paper-input label="Note data" id="noteData" ng-model="noteData" auto-validate required error-message="Need Note data">
-							</paper-input>						
-						</div>
-						<div class="dialogActions">
-							<paper-button autofocus id="addData" ng-click="addData()">Save</paper-button>
-							<paper-button dialog-dismiss id="cancelData" ng-click="cancelData()">Cancel</paper-button>
-						</div>
-					</paper-dialog>
-        </paper-fab-morph>
-
-
+		<paper-dialog id="addNoteButton" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop="true">
+			<div class="dialogHeader">
+				<h3>Create Note</h3>
+			</div>
+			<div class="dialogBody">
+				<paper-input label="Title" id="noteTitle" ng-model="noteTitle" char-counter required auto-validate error-message="Need Title" autofocus>
+				</paper-input>
+				<paper-input label="Note data" id="noteData" ng-model="noteData" auto-validate required error-message="Need Note data">
+				</paper-input>						
+			</div>
+			<div class="dialogActions">
+				<paper-button autofocus id="addData" ng-click="addData()">Save</paper-button>
+				<paper-button dialog-dismiss id="cancelData" ng-click="cancelData()">Cancel</paper-button>
+			</div>
+		</paper-dialog>
 
 
 		<paper-dialog id="accountInfo" no-overlap horizontal-align="right" vertical-align="top">
