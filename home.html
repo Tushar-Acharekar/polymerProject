@@ -35,7 +35,7 @@
 		max-width:400px;
 	}
 	
-	paper-fab{
+	#addNote{
 		position:fixed;
 		bottom:28px;
 		right:28px;
@@ -121,18 +121,6 @@
 				</div>
 			</app-drawer>
 
-			<!--<paper-card image="" alt="House" class="white" style="margin-bottom:8px;">
-				<div class="card-content">
-					Congratulation {{ dpName }}, You have logged in successfully.
-				</div>
-				<div class="card-actions">
-				<paper-icon-button icon="favorite"></paper-icon-button>
-				<paper-icon-button icon="bookmark"></paper-icon-button>
-				<paper-icon-button icon="social:share"></paper-icon-button>
-				<paper-button id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()">Sign Out</paper-button>
-				</div>
-			</paper-card> -->
-
 			<ul class="warpperUL">
 				<li ng-repeat="message in messages1">
 							<div class="demo-card-square mdl-card mdl-shadow--2dp"  id="{{ message.id }}">
@@ -150,26 +138,30 @@
 				</li>
 			</ul>
 
-			<paper-fab icon="add" raised onclick="addNoteButton.open()"></paper-fab>
-			
     </app-drawer-layout>
   </app-header-layout>
 
-		<paper-dialog id="addNoteButton" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop="true">
-			<div class="dialogHeader">
-				<h3>Create Note</h3>
-			</div>
-			<div class="dialogBody">
-				<paper-input label="Title" id="noteTitle" ng-model="noteTitle" char-counter required auto-validate error-message="Need Title" autofocus>
-				</paper-input>
-				<paper-input label="Note data" id="noteData" ng-model="noteData" auto-validate required error-message="Need Note data">
-				</paper-input>						
-			</div>
-			<div class="dialogActions">
-				<paper-button autofocus id="addData" ng-click="addData()">Save</paper-button>
-				<paper-button dialog-dismiss id="cancelData" ng-click="cancelData()">Cancel</paper-button>
-			</div>
-		</paper-dialog>
+			
+			  <paper-fab-morph is-overlay-content class="top-left">
+					<paper-fab id="addNote" class="dropdown-trigger" icon="add" raised onclick="addNoteButton.open()"></paper-fab>
+					<paper-dialog id="addNoteButton" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop="true">
+						<div class="dialogHeader">
+							<h3>Create Note</h3>
+						</div>
+						<div class="dialogBody">
+							<paper-input label="Title" id="noteTitle" ng-model="noteTitle" char-counter required auto-validate error-message="Need Title" autofocus>
+							</paper-input>
+							<paper-input label="Note data" id="noteData" ng-model="noteData" auto-validate required error-message="Need Note data">
+							</paper-input>						
+						</div>
+						<div class="dialogActions">
+							<paper-button autofocus id="addData" ng-click="addData()">Save</paper-button>
+							<paper-button dialog-dismiss id="cancelData" ng-click="cancelData()">Cancel</paper-button>
+						</div>
+					</paper-dialog>
+        </paper-fab-morph>
+
+
 
 
 		<paper-dialog id="accountInfo" no-overlap horizontal-align="right" vertical-align="top">
