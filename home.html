@@ -138,12 +138,10 @@
 				</li>
 			</ul>
 
-			<!--<paper-fab id="addNote" icon="add" raised onclick="addNoteButton.open()"></paper-fab>-->
-
     </app-drawer-layout>
   </app-header-layout>
 
-			  <paper-fab-morph is-overlay-content class="top-left" duration="500">
+			  <paper-fab-morph is-overlay-content class="top-left">
 					<paper-fab id="addNote" icon="add" raised class="dropdown-trigger"></paper-fab>
 					<paper-dialog id="addNoteButton" class="dropdown-content" with-backdrop="true">
 						<div class="dialogHeader">
@@ -162,33 +160,26 @@
 					</paper-dialog>
         </paper-fab-morph>
 
+			  <paper-fab-morph is-overlay-content class="top-left">
+					<paper-fab id="hiddenBtnDisplayAccount" raised class="dropdown-trigger"></paper-fab>
+					<paper-dialog id="dialogDisplayAccount" class="dropdown-content" with-backdrop="true">
+						<div class="dialogBody">
+								Hi {{ dpName }}, This is your account..!								
+						</div>
+						<div class="dialogActions">
+								<paper-icon-button icon="power-settings-new" class="sign-out" id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()"></paper-icon-button>
+						</div>
+					</paper-dialog>
+        </paper-fab-morph>
 
-
-		<!--<paper-dialog id="addNoteButton" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop="true">
-			<div class="dialogHeader">
-				<h3>Create Note</h3>
-			</div>
-			<div class="dialogBody">
-				<paper-input label="Title" id="noteTitle" ng-model="noteTitle" char-counter required auto-validate error-message="Need Title" autofocus>
-				</paper-input>
-				<paper-input label="Note data" id="noteData" ng-model="noteData" auto-validate required error-message="Need Note data">
-				</paper-input>						
-			</div>
-			<div class="dialogActions">
-				<paper-button autofocus id="addData" ng-click="addData()">Save</paper-button>
-				<paper-button dialog-dismiss id="cancelData" ng-click="cancelData()">Cancel</paper-button>
-			</div>
-		</paper-dialog>-->
-
-
-		<paper-dialog id="accountInfo" no-overlap horizontal-align="right" vertical-align="top">
+		<!--<paper-dialog id="accountInfo" no-overlap horizontal-align="right" vertical-align="top">
 					<div>
 					Hi {{ dpName }}, This is your account..!					
 					</div>
 					<div>
 					<paper-icon-button icon="power-settings-new" class="sign-out" id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()"></paper-icon-button>
 					</div>
-		</paper-dialog>	
+		</paper-dialog>	-->
 
 
 
