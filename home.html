@@ -3,128 +3,125 @@
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <link rel="import" href="javscript_import.html">
 <style is="custom-style">
-	app-header {
-		background-color: #E57373;
-		color: #fff;
-		--app-header-shadow: {
-			box-shadow: inset 0px 5px 2px -3px rgba(0, 0, 0, 0.2);
-			opacity: 1;
-		}
-		;
+    app-header {
+      background-color: #E57373;
+      color: #fff;
+			--app-header-shadow: {
+				  box-shadow: inset 0px 5px 2px -3px rgba(0, 0, 0, 0.2);
+				  opacity:1;
+				};
+    }
+	
+    app-header paper-icon-button {
+      --paper-icon-button-ink-color: #fff;
+    }
+    app-drawer-layout {
+      --app-drawer-layout-content-transition: margin 0.2s;
+	    margin: 10px;
+    }
+    app-drawer {
+      --app-drawer-content-container: {
+        background-color: #9575CD;
+      }
+    }
+    .drawer-content {
+      margin-top: 64px;
+      height: calc(100% - 80px);
+      overflow: auto;
+	    background-color: #9575CD;
+    }
+	
+	paper-card{
+		max-width:400px;
 	}
-
-	app-header paper-icon-button {
-		--paper-icon-button-ink-color: #fff;
-	}
-
-	app-drawer-layout {
-		--app-drawer-layout-content-transition: margin 0.2s;
-		margin: 10px;
-	}
-
-	app-drawer {
-		--app-drawer-content-container: {
-			background-color: #9575CD;
-		}
-	}
-
-	.drawer-content {
-		margin-top: 64px;
-		height: calc(100% - 80px);
-		overflow: auto;
-		background-color: #9575CD;
-	}
-
-	paper-card {
-		max-width: 400px;
-	}
-
-	paper-fab {
-		position: fixed;
-		bottom: 28px;
-		right: 28px;
+	
+	paper-fab{
+		position:fixed;
+		bottom:28px;
+		right:28px;
 		background-color: #e57373;
 		z-index: 1000;
 	}
-
+	
 	.mdl-card {
 		background-color: #fff;
 		max-width: 350px;
-		min-width: 250px;
+    min-width: 250px;
 		width: auto;
 	}
-
-	.mdl-card__supporting-text {
+	
+	.mdl-card__supporting-text{
 		min-height: 50px;
 	}
-
-	.warpperUL {
+	
+	.warpperUL{
 		list-style-type: none;
-		padding-left: 0px;
+    padding-left: 0px;
 		display: flex;
 		flex-wrap: wrap;
 	}
-
-	.warpperUL>li {
-		padding: 5px;
+	
+	.warpperUL > li{
+		padding:5px;
 	}
-
-	.deleteData {
-		float: right;
+	
+	.deleteData{
+		 float: right;
 	}
-
-	.favoriteData[icon=favorite] {
+	
+	.favoriteData[icon=favorite]{
 		color: #f44336;
 	}
-
-	#accountInfo {
-		margin: 0px;
+	
+	#accountInfo{
+		margin:0px;
 		padding: 10px;
-		border-radius: 4px;
+    border-radius: 4px;
 	}
-
-	#quickstart-sign-out {
+	
+	#quickstart-sign-out{
 		float: right;
 	}
-</style>
+	
+    </style>
 
-<app-header-layout>
-	<app-header fixed effects="waterfall" slot="header">
-		<app-toolbar>
-			<paper-icon-button id="toggle" icon="menu"></paper-icon-button>
-			<div main-title>Rain-Data-Store</div>
-			<paper-avatar id="avatarDp" src="" ng-click="openAccount()"></paper-avatar>
-		</app-toolbar>
-	</app-header>
+  <app-header-layout>
+    <app-header fixed effects="waterfall" slot="header">
+      <app-toolbar>
+        <paper-icon-button id="toggle" icon="menu"></paper-icon-button>
+        <div main-title>Rain-Data-Store</div>
+				<paper-avatar id="avatarDp" src="" ng-click="openAccount()"></paper-avatar>
+      </app-toolbar>
+    </app-header>
 
-	<app-drawer-layout id="drawerLayout">
-		<app-drawer slot="drawer">
-			<div class="drawer-content">
-				<paper-icon-item selected>
-					<iron-icon icon="inbox" slot="item-icon" item-icon></iron-icon> Inbox
-				</paper-icon-item>
-				<paper-icon-item>
-					<iron-icon icon="favorite" slot="item-icon" item-icon></iron-icon> Favorite
-				</paper-icon-item>
-				<paper-icon-item>
-					<iron-icon icon="perm-media" slot="item-icon" item-icon></iron-icon> Image
-				</paper-icon-item>
-				<paper-icon-item>
-					<iron-icon icon="theaters" slot="item-icon" item-icon></iron-icon> Video
-				</paper-icon-item>
-				<paper-icon-item>
-					<iron-icon icon="text-format" slot="item-icon" item-icon></iron-icon> Text
-				</paper-icon-item>
-				<paper-icon-item>
-					<iron-icon icon="delete" slot="item-icon" item-icon></iron-icon> Trash
-				</paper-icon-item>
-				<paper-icon-item>
-					<iron-icon icon="account-box" slot="item-icon" item-icon></iron-icon> Update Profile
-				</paper-icon-item>
-			</div>
-		</app-drawer>
+    <app-drawer-layout id="drawerLayout">
+			<app-drawer slot="drawer">
+				<div class="drawer-content">
+						<paper-icon-item selected>
+						<iron-icon icon="inbox" slot="item-icon" item-icon></iron-icon> Inbox
+						</paper-icon-item>
+						<paper-icon-item>
+						<iron-icon icon="favorite" slot="item-icon" item-icon></iron-icon> Favorite
+						</paper-icon-item>
+						<paper-icon-item>
+						<iron-icon icon="perm-media" slot="item-icon" item-icon></iron-icon> Image
+						</paper-icon-item>
+						<paper-icon-item>
+						<iron-icon icon="theaters" slot="item-icon" item-icon></iron-icon> Video
+						</paper-icon-item>
+						<paper-icon-item>
+						<iron-icon icon="text-format" slot="item-icon" item-icon></iron-icon> Text
+						</paper-icon-item>
+						<paper-icon-item>
+						<iron-icon icon="delete" slot="item-icon" item-icon></iron-icon> Trash
+						</paper-icon-item>
+						<paper-icon-item>
+						<iron-icon icon="account-box" slot="item-icon" item-icon></iron-icon> Update Profile
+						</paper-icon-item>
+				</div>
+			</app-drawer>
 
-		<!--<paper-card image="" alt="House" class="white" style="margin-bottom:8px;">
+			<!--<paper-card image="" alt="House" class="white" style="margin-bottom:8px;">
 				<div class="card-content">
 					Congratulation {{ dpName }}, You have logged in successfully.
 				</div>
@@ -136,52 +133,60 @@
 				</div>
 			</paper-card> -->
 
-		<ul class="warpperUL">
-			<li ng-repeat="message in messages1">
-				<div class="demo-card-square mdl-card mdl-shadow--2dp" id="{{ message.id }}">
-					<div class="mdl-card__title">
-						<h2 class="mdl-card__title-text"> {{ message.title }} </h2>
+			<ul class="warpperUL">
+				<li ng-repeat="message in messages1">
+							<div class="demo-card-square mdl-card mdl-shadow--2dp"  id="{{ message.id }}">
+								<div class="mdl-card__title">
+									<h2 class="mdl-card__title-text"> {{ message.title }} </h2>
+								</div>
+								<div class="mdl-card__supporting-text">	{{ message.note }}	</div>
+								<div class="mdl-card__actions mdl-card--border">
+									<paper-icon-button icon="create" class="editData" ng-click="editData()"></paper-icon-button>
+									<paper-icon-button icon="{{ message.favorite }}" class="favoriteData" ng-click="favoriteData(message.id)"></paper-icon-button>
+									<paper-icon-button icon="content-copy" class="copyData"></paper-icon-button>
+									<paper-icon-button icon="delete" class="deleteData" ng-click="deleteData(message.id)"></paper-icon-button>
+								</div>
+							</div>
+				</li>
+			</ul>
+
+			<paper-fab icon="add" raised onclick="addNoteButton.open()"></paper-fab>
+			
+    </app-drawer-layout>
+  </app-header-layout>
+
+		<paper-dialog id="addNoteButton" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop="true">
+			<div class="dialogHeader">
+				<h3>Create Note</h3>
+			</div>
+			<div class="dialogBody">
+				<paper-input label="Title" id="noteTitle" ng-model="noteTitle" char-counter required auto-validate error-message="Need Title" autofocus>
+				</paper-input>
+				<paper-input label="Note data" id="noteData" ng-model="noteData" auto-validate required error-message="Need Note data">
+				</paper-input>						
+			</div>
+			<div class="dialogActions">
+				<paper-button autofocus id="addData" ng-click="addData()">Save</paper-button>
+				<paper-button dialog-dismiss id="cancelData" ng-click="cancelData()">Cancel</paper-button>
+			</div>
+		</paper-dialog>
+
+
+		<paper-dialog id="accountInfo" no-overlap horizontal-align="right" vertical-align="top">
+					<div>
+					Hi {{ dpName }}, This is your account..!					
 					</div>
-					<div class="mdl-card__supporting-text"> {{ message.note }} </div>
-					<div class="mdl-card__actions mdl-card--border">
-						<paper-icon-button icon="create" class="editData" ng-click="editData()"></paper-icon-button>
-						<paper-icon-button icon="{{ message.favorite }}" class="favoriteData" ng-click="favoriteData(message.id)"></paper-icon-button>
-						<paper-icon-button icon="content-copy" class="copyData"></paper-icon-button>
-						<paper-icon-button icon="delete" class="deleteData" ng-click="deleteData(message.id)"></paper-icon-button>
+					<div>
+					<paper-icon-button icon="power-settings-new" class="sign-out" id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()"></paper-icon-button>
 					</div>
-				</div>
-			</li>
-		</ul>
+		</paper-dialog>	
 
-		<!--<paper-fab icon="add" raised onclick="addNoteButton.open()"></paper-fab>-->
 
-		<paper-fab-morph is-overlay-content class="top-left">
-			<paper-fab icon="add" class="dropdown-trigger"></paper-fab>
-			<paper-dialog id="addNoteButton" class="dropdown-content" alwaysOnTop="true">
-				<div class="dialogHeader">
-					<h3>Create Note</h3>
-				</div>
-				<div class="dialogBody">
-					<paper-input label="Title" id="noteTitle" ng-model="noteTitle" char-counter required auto-validate error-message="Need Title" autofocus>
-					</paper-input>
-					<paper-input label="Note data" id="noteData" ng-model="noteData" auto-validate required error-message="Need Note data">
-					</paper-input>
-				</div>
-				<div class="dialogActions">
-					<paper-button autofocus id="addData" ng-click="addData()">Save</paper-button>
-					<paper-button dialog-dismiss id="cancelData" ng-click="cancelData()">Cancel</paper-button>
-				</div>
-			</paper-dialog>
-		</paper-fab-morph>
 
-	</app-drawer-layout>
-</app-header-layout>
 
-<paper-dialog id="accountInfo" no-overlap horizontal-align="right" vertical-align="top">
-	<div>
-		Hi {{ dpName }}, This is your account..!
-	</div>
-	<div>
-		<paper-icon-button icon="power-settings-new" class="sign-out" id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()"></paper-icon-button>
-	</div>
-</paper-dialog>
+
+
+
+
+
+
