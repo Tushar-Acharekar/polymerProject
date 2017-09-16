@@ -147,13 +147,21 @@
 
 			  <paper-fab-morph is-overlay-content class="top-left">
           <paper-fab icon="launch" class="dropdown-trigger"></paper-fab>
-          <paper-dialog class="dropdown-content">
-            <h2>Example Dialog</h2>
-
-            <div class="buttons">
-              <paper-button dialog-dismiss>Close</paper-button>
-            </div>
-          </paper-dialog>
+					<paper-dialog id="addNoteButton1" with-backdrop="true">
+						<div class="dialogHeader">
+							<h3>Create Note</h3>
+						</div>
+						<div class="dialogBody">
+							<paper-input label="Title" id="noteTitle" ng-model="noteTitle" char-counter required auto-validate error-message="Need Title" autofocus>
+							</paper-input>
+							<paper-input label="Note data" id="noteData" ng-model="noteData" auto-validate required error-message="Need Note data">
+							</paper-input>						
+						</div>
+						<div class="dialogActions">
+							<paper-button autofocus id="addData" ng-click="addData()">Save</paper-button>
+							<paper-button dialog-dismiss id="cancelData" ng-click="cancelData()">Cancel</paper-button>
+						</div>
+					</paper-dialog>
         </paper-fab-morph>
 
 		<paper-dialog id="addNoteButton" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop="true">
