@@ -152,6 +152,17 @@
 
 			<paper-fab icon="add" raised onclick="addNoteButton.open()"></paper-fab>
 			
+        <paper-fab-morph is-overlay-content class="top-left">
+          <paper-fab icon="launch" class="dropdown-trigger"></paper-fab>
+          <paper-dialog class="dropdown-content">
+            <h2>Example Dialog</h2>
+
+            <div class="buttons">
+              <paper-button dialog-dismiss>Close</paper-dialog>
+            </div>
+          </paper-dialog>
+        </paper-fab-morph>
+			
     </app-drawer-layout>
   </app-header-layout>
 

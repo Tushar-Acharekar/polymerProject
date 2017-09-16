@@ -32,6 +32,7 @@
     "paper-dialog": "PolymerElements/paper-dialog#^2.0.0",
     "neon-animation": "PolymerElements/neon-animation#^2.0.1",
     "paper-spinner": "PolymerElements/paper-spinner#~2.0.0",
-    "iron-dropdown": "PolymerElements/iron-dropdown#~2.0.0"
+    "iron-dropdown": "PolymerElements/iron-dropdown#~2.0.0",
+    "paper-fab-transitions": "GabiAxel/paper-fab-transitions#~0.1.0"
   }
 }
