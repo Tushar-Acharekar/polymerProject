@@ -147,17 +147,13 @@
 
 			  <paper-fab-morph is-overlay-content class="top-left">
           <paper-fab icon="launch" class="dropdown-trigger"></paper-fab>
-					<paper-dialog with-backdrop="true">
-						<div class="dialogHeader">
-							<h3>Create Note</h3>
-						</div>
-						<div class="dialogBody">
-					
-						</div>
-						<div class="dialogActions">
+          <paper-dialog class="dropdown-content" with-backdrop="true">
+            <h2>Example Dialog</h2>
 
-						</div>
-					</paper-dialog>
+            <div class="buttons">
+              <paper-button dialog-dismiss>Close</paper-button>
+            </div>
+          </paper-dialog>
         </paper-fab-morph>
 
 		<paper-dialog id="addNoteButton" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop="true">
