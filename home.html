@@ -83,14 +83,6 @@
 		float: right;
 	}
 	
-	#hiddenBtnDisplayAccount{
-		position: fixed;
-    top: 10px;
-    right: 10px;
-		z-index: -10;
-    height: 10px;
-	}
-	
     </style>
 
   <app-header-layout>
@@ -146,7 +138,7 @@
 				</li>
 			</ul>
 
-			<paper-fab icon="add" raised onclick="addNoteButton.open()"></paper-fab>
+			<paper-fab id="#addNote" icon="add" raised onclick="addNoteButton.open()"></paper-fab>
 			
     </app-drawer-layout>
   </app-header-layout>
