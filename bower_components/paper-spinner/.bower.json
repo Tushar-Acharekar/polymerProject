@@ -61,6 +61,5 @@
   },
   "_source": "git://github.com/PolymerElements/paper-spinner.git",
   "_target": "~2.0.0",
-  "_originalSource": "PolymerElements/paper-spinner",
-  "_direct": true
+  "_originalSource": "PolymerElements/paper-spinner"
 }

@@ -26,13 +26,11 @@
     "ng-polymer-elements": "^0.3.0",
     "paper-item": "PolymerElements/paper-item#^2.0.0",
     "paper-toast": "PolymerElements/paper-toast#^2.0.0",
-    "vaadin-upload": "^2.0.0",
     "paper-avatar": "Abe90/paper-avatar#^1.0.4",
     "paper-fab": "PolymerElements/paper-fab#^2.0.0",
     "paper-dialog": "PolymerElements/paper-dialog#^2.0.0",
     "neon-animation": "PolymerElements/neon-animation#^2.0.1",
     "paper-spinner": "PolymerElements/paper-spinner#~2.0.0",
-    "iron-dropdown": "PolymerElements/iron-dropdown#~2.0.0",
-    "paper-fab-transitions": "GabiAxel/paper-fab-transitions#~0.1.0"
+    "iron-dropdown": "PolymerElements/iron-dropdown#~2.0.0"
   }
 }

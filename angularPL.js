@@ -134,9 +134,9 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
 	
 	$scope.openAccount = function (){
 		console.log("in avatar....!");
-		document.querySelector('#hiddenBtnDisplayAccount').click();
-	}	
-
+		document.querySelector('#accountInfo').positionTarget = document.querySelector('#avatarDp');
+		document.querySelector('#accountInfo').open();
+	}
 	
 /**********************************************************************************************************************************************/
 	
