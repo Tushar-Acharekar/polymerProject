@@ -203,12 +203,12 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
  module1.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "../login1.html",
+        templateUrl : "src/login1.html",
 		controller : "myCtrl1"
     })
 	
     .when("/home", {
-        templateUrl : "../viewes/home.html",
+        templateUrl : "src/viewes/home.html",
 		controller : "myCtrl1"
     })	
 }); 
