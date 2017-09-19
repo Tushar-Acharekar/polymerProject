@@ -1,0 +1,79 @@
+  
+  <link rel="import" href="../bower_components/polymer/polymer.html">
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+  <link rel="import" href="../bower_components/app-layout/app-layout.html">
+  <link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+  <link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+  <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+  <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+  <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+  <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+
+  <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+  <link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
+  <link rel="import" href="../bower_components/iron-resizable-behavior/iron-resizable-behavior.html">
+  <link rel="import" href="../bower_components/iron-scroll-target-behavior/iron-scroll-target-behavior.html">
+
+  <link rel="import" href="../bower_components/paper-styles/paper-styles.html">
+  <link rel="import" href="../bower_components/paper-card/paper-card.html">
+  <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="../bower_components/paper-button/paper-button.html">
+  <link rel="import" href="../bower_components/paper-input/paper-input.html">
+  <link rel="import" href="../bower_components/paper-item/paper-icon-item.html">
+  <link rel="import" href="../bower_components/paper-toast/paper-toast.html">
+	<link rel="import" href="../bower_components/paper-fab/paper-fab.html">
+	<link rel="import" href="../bower_components/paper-avatar/paper-avatar.html">
+	<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+
+  <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+  <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="../bower_components/iron-iconset-svg/iron-iconset-svg.html"> 
+
+	<link rel="import" href="../bower_components/neon-animation/web-animations.html">
+	<link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html">
+	<link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
+
+
+<style>
+	  body {
+      margin: 0;
+      font-family: 'Roboto', 'Noto', sans-serif;
+      background-color: #FF9E80;
+			min-height:100vh;		
+    }
+	
+	.login_card{
+		width:300px;
+	}
+	
+	.login_card .card-actions{
+		display: flex;
+    justify-content: space-around;
+	}
+	
+	.container1 {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 100vh;
+			justify-content: center;
+	}		
+</style>
+<div class="container1">
+		<paper-card image="../images/login/login.png" alt="Pulse" class="white login_card">
+			<div class="card-content">
+				<paper-input label="Username" id="email" ng-model="email" char-counter required auto-validate error-message="Need Username" autofocus>
+				</paper-input>
+				<paper-input label="Password" id="password" type="password" ng-model="password" char-counter required auto-validate error-message="Need Password">
+				</paper-input>
+				<paper-input label="Name" id="name" ng-model="name" ng-hide="signupFlagHide" char-counter required auto-validate error-message="Need Name">
+				</paper-input>
+				<input type="file" id="myFile" size="50" ng-hide="signupFlagHide"> 
+			</div>
+			<div class="card-actions">
+				<paper-button id="quickstart-sign-in" name="signin" ng-click="functionSignIn()">Login</paper-button>
+				<paper-button id="quickstart-sign-up" name="signUp" ng-click="functionSignUp()">SignUp</paper-button>
+			</div>
+		</paper-card>
+</div>
