@@ -1,5 +1,5 @@
 
-var module1 = angular.module("MODULE1", ["ngRoute", "firebase", "ng-polymer-elements"]);
+var module1 = angular.module("MODULE1", ["ngRoute", "firebase", "robdodson.ce-bind"]);
 
 module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $firebaseObject, $firebaseArray) {
 	$scope.getInput = document.querySelectorAll('paper-input');
@@ -203,7 +203,7 @@ module1.controller("myCtrl1", function($scope, $location, $firebaseAuth, $fireba
  module1.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "src/login1.html",
+        templateUrl : "src/viewes/login1.html",
 		controller : "myCtrl1"
     })
 	

@@ -1,4 +1,4 @@
-<!--<link rel="import" href="src/javascript/javscript_import.html">-->
+<script src="src/javascript/javscript_import.js"></script>
 <style is="custom-style">
     app-header {
       background-color: #E57373;
@@ -87,7 +87,7 @@
       <app-toolbar>
         <paper-icon-button id="toggle" icon="menu"></paper-icon-button>
         <div main-title>Rain-Data-Store</div>
-				<paper-avatar id="avatarDp" src="" ng-click="openAccount()"></paper-avatar>
+				<paper-avatar id="avatarDp" src="" ng-click="openAccount()" ce-interpolated></paper-avatar>
       </app-toolbar>
     </app-header>
 
@@ -126,10 +126,10 @@
 								</div>
 								<div class="mdl-card__supporting-text">	{{ message.note }}	</div>
 								<div class="mdl-card__actions mdl-card--border">
-									<paper-icon-button icon="create" class="editData" ng-click="editData()"></paper-icon-button>
-									<paper-icon-button icon="{{ message.favorite }}" class="favoriteData" ng-click="favoriteData(message.id)"></paper-icon-button>
+									<paper-icon-button icon="create" class="editData" ng-click="editData()" ce-interpolated></paper-icon-button>
+									<paper-icon-button icon="{{ message.favorite }}" class="favoriteData" ng-click="favoriteData(message.id)" ce-interpolated></paper-icon-button>
 									<paper-icon-button icon="content-copy" class="copyData"></paper-icon-button>
-									<paper-icon-button icon="delete" class="deleteData" ng-click="deleteData(message.id)"></paper-icon-button>
+									<paper-icon-button icon="delete" class="deleteData" ng-click="deleteData(message.id)" ce-interpolated></paper-icon-button>
 								</div>
 							</div>
 				</li>
@@ -145,14 +145,14 @@
 						<h3>Create Note</h3>
 					</div>
 					<div class="dialogBody">
-						<paper-input label="Title" id="noteTitle" ng-model="noteTitle" char-counter required auto-validate error-message="Need Title" autofocus>
+						<paper-input label="Title" id="noteTitle" ng-model="noteTitle" char-counter required auto-validate error-message="Need Title" autofocus ce-interpolated>
 						</paper-input>
-						<paper-input label="Note data" id="noteData" ng-model="noteData" auto-validate required error-message="Need Note data">
+						<paper-input label="Note data" id="noteData" ng-model="noteData" auto-validate required error-message="Need Note data" ce-interpolated>
 						</paper-input>						
 					</div>
 					<div class="dialogActions">
-						<paper-button autofocus id="addData" ng-click="addData()">Save</paper-button>
-						<paper-button dialog-dismiss id="cancelData" ng-click="cancelData()">Cancel</paper-button>
+						<paper-button autofocus id="addData" ng-click="addData()" ce-interpolated>Save</paper-button>
+						<paper-button dialog-dismiss id="cancelData" ng-click="cancelData()" ce-interpolated>Cancel</paper-button>
 					</div>
 				</paper-dialog>
 
@@ -161,21 +161,10 @@
 					Hi {{ dpName }}, This is your account..!					
 					</div>
 					<div>
-					<paper-icon-button icon="power-settings-new" class="sign-out" id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()"></paper-icon-button>
+					<paper-icon-button icon="power-settings-new" class="sign-out" id="quickstart-sign-out" name="signOut" ng-click="functionSignOut()" ce-interpolated></paper-icon-button>
 					</div>
 		</paper-dialog>
 
-  <script>
-    var drawerLayout = document.getElementById('drawerLayout');
-    toggle.addEventListener('click', function() {
-			console.log("clicked....................!");
-      if (drawerLayout.forceNarrow || !drawerLayout.narrow) {
-        drawerLayout.forceNarrow = !drawerLayout.forceNarrow;
-      } else {
-        drawerLayout.drawer.toggle();
-      }
-    });
-  </script>
 
 
 

@@ -1,4 +1,3 @@
-  <script>
     var drawerLayout = document.getElementById('drawerLayout');
     toggle.addEventListener('click', function() {
 			console.log("clicked....................!");
@@ -8,4 +7,4 @@
         drawerLayout.drawer.toggle();
       }
     });
-  </script>
+
