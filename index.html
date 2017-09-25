@@ -9,12 +9,22 @@
 
   <link rel="import" href="bower_components/polymer/polymer.html">
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+	
+	  <link rel="import" href="bower_components/paper-input/paper-input.html">
 
-	 <link rel="import" href="src/tyser-note.html">
+<!-- 	 <link rel="import" href="src/tyser-note.html"> -->
+	
+
+	<script src="src/angularjs/angularPL.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="node_modules/angular-custom-elements/dist/ce-bind.min.js"></script>
 </head>
 
     <body>
-			<tyser-note></tyser-note>
+<!-- 			<tyser-note></tyser-note> -->
+			<paper-input label="Title" id="noteTitle" ng-model="noteTitle" ce-interpolated></paper-input>
+			<div>{{ noteTitle }}</div>
     </body>
 
 </html>
