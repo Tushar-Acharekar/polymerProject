@@ -1,7 +1,4 @@
-import {Component, DynamicComponentLoader, ElementRef, ComponentRef, Injector, ViewChild} from 'angular2/core';
-import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Validators} from 'angular2/common';
-
-
+import { Component } from '@angular/core';
 
 @Component ({
    selector: 'my-app',
