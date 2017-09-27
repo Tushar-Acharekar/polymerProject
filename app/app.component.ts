@@ -27,5 +27,5 @@ export class AppModule { }
 })
 
 export class AppComponent {
-   appTitle: string = 'Tushara';
+   appTitle: string = 'Tushara_1';
 }
