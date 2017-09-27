@@ -2,6 +2,18 @@ import {Component, DynamicComponentLoader, ElementRef, ComponentRef, Injector, V
 import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Validators} from 'angular2/common';
 import { PolymerModule, PolymerElement } from '@vaadin/angular2-polymer';
 
+@NgModule({
+  imports: [ PolymerModule ],
+  declarations: [
+    AppComponent,
+    PolymerElement('paper-input'),
+    PolymerElement('vaadin-combo-box')
+  ],
+  bootstrap: [ AppComponent ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+})
+export class AppModule { }
+
 
 @Component ({
    selector: 'my-app',
